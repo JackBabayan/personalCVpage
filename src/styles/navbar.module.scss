@@ -1,0 +1,12 @@
+.navbarWrapper {
+  a{
+    color: black;
+  }
+  button{
+    background: black;
+    color: white;
+    &:hover{
+      background: #000000bd;
+    }
+  }
+}
