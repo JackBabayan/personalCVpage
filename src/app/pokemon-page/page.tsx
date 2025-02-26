@@ -5,9 +5,9 @@ import { useRouter } from "next/navigation";
 import { useAuth } from '@/context/AuthContext';
 import Link from "next/link";
 
-import { Box, Input, Button, List, Container, Spinner ,Center} from "@chakra-ui/react";
+import { Box, Input, Button, List, ListItem, Container, Spinner, Center } from "@chakra-ui/react";
 
-import styles from "@/styles/pokemon.module.scss"
+import styles from "@/styles/pokemon.module.scss";
 
 export default function PokemonPage() {
   const [data, setData] = useState([]);
@@ -43,29 +43,29 @@ export default function PokemonPage() {
     <Container maxW="80vw" mt="20px" mb="20px" className={styles.pokemonWrapper}>
       <Box as="section" mb="20px">
         <Input
-          placeholder="Search Pokémon"
+          placeholder="Search Pokemon"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
       </Box>
 
       <Box as="section" mb="20px">
-        <List.Root gap="2" listStyle="decimal" align="center">
+        <List spacing={3} styleType="decimal">
           {filteredData.map((item, ind) => (
-            <List.Item key={ind}>
+            <ListItem key={ind}>
               <Link href={`/pokemon-info/${item.name}`}>{item.name}</Link>
-            </List.Item>
+            </ListItem>
           ))}
-        </List.Root>
+        </List>
       </Box>
 
-      {loading &&  <Center bg="bg.emphasized" h="100vh" w="100%"><Spinner size="lg"  /></Center>}
+      {loading && <Center bg="bg.emphasized" h="100vh" w="100%"><Spinner size="lg" /></Center>}
 
       {hasMore && !loading && (
         <Button
           onClick={() => setOffset((prevOffset) => prevOffset + 20)}
-          colorScheme="blue"
-        >
+          colorScheme="green"
+          variant="outline">
           Load More
         </Button>
       )}

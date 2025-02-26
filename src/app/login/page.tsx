@@ -2,8 +2,7 @@
 import { useLayoutEffect } from "react";
 
 import { useRouter } from "next/navigation";
-import { Box, Button, Input, Stack, Text } from '@chakra-ui/react';
-import { Tooltip } from "@/components/ui/tooltip"
+import { Box, Button, Input, Stack, Text, Tooltip } from '@chakra-ui/react';
 import { PasswordInput } from "@/components/ui/password-input"
 import { useForm } from "react-hook-form";
 
@@ -34,26 +33,26 @@ export default function AuthPage() {
       <form onSubmit={onSubmit} className={styles.formWrapper}>
         <Stack gap={4} align="center">
           <div className={styles.formItem}>
-            <Tooltip content="Username : admin">
+            <Tooltip label="Username : admin">
               <Text>
-                Username
+                User name
               </Text>
             </Tooltip>
-            <Input placeholder="Username" {...register("username", { required: "Username is required" })} />
+            <Input placeholder="User name" {...register("username", { required: "User name is required" })} />
             {errors.username?.message && <Text textStyle="xs" color={"red"}>{errors.username?.message}</Text>}
           </div>
 
           <div className={styles.formItem}>
-            <Tooltip content="Password : 12345">
+            <Tooltip label="Password : 12345">
               <Text>
                 Password
               </Text>
             </Tooltip>
-            <PasswordInput placeholder="Password" {...register("password", { required: "Password is required" })} type="password" />
+            <PasswordInput placeholder="Password" {...register("password", { required: "Password is required" })} />
             {errors.password?.message && <Text textStyle="xs" color={"red"}>{errors.password?.message}</Text>}
           </div>
 
-          <Button type="submit" colorScheme="blue">
+          <Button type="submit" colorScheme="green" variant="outline">
             Login
           </Button>
         </Stack>

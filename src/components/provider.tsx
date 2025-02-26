@@ -1,13 +1,21 @@
 "use client"
 
-import { ChakraProvider, defaultSystem } from "@chakra-ui/react"
+import { ChakraProvider, extendTheme } from "@chakra-ui/react"
 import { ThemeProvider } from "next-themes"
 
-export default function RootLayout(props: { children: React.ReactNode }) {
+const theme = extendTheme({
+  fonts: {
+    heading: 'var(--font-rubik)',
+    body: 'var(--font-rubik)',
+  }
+  
+}) // Кастомная тема, можно добавить стили
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <ChakraProvider value={defaultSystem}>
+    <ChakraProvider theme={theme}>
       <ThemeProvider attribute="class" disableTransitionOnChange>
-        {props.children}
+        {children}
       </ThemeProvider>
     </ChakraProvider>
   )

@@ -14,14 +14,19 @@ export default function Navbar() {
             <Flex gap="8" align="center">
                 <Link href="/">Home</Link>
                 {authStatus &&
-                    <Link href="/pokemon-page">Pokemon Page</Link>
+                    <>
+                        <Link href="/pokemon-page">Pokemon Page</Link>
+                        <Link href="/about">About me</Link>
+                        <Link href="/contact">Contact</Link>
+                        <Link href="/projects">My projects</Link>
+                    </>
                 }
             </Flex>
             <div>
                 {authStatus ? (
-                    <Button onClick={logout} variant="outline">Logout</Button>
+                    <Button onClick={logout} colorScheme="green" variant="outline">Logout</Button>
                 ) : (
-                    <Link href="/login"><Button variant="outline">Login</Button></Link>
+                    <Link href="/login"><Button colorScheme="green" variant="outline">Login</Button></Link>
                 )}
             </div>
         </Flex >
