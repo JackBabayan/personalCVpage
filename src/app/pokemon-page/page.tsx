@@ -7,7 +7,7 @@ import Link from "next/link";
 
 import { Box, Input, Button, List, ListItem, Container, Spinner, Center } from "@chakra-ui/react";
 
-import styles from "@/styles/pokemon.module.scss";
+import styles from "./style.module.scss";
 
 export default function PokemonPage() {
   const [data, setData] = useState([]);

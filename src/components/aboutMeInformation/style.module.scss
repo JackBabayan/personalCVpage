@@ -1,0 +1,49 @@
+.wrapper{
+  >*{
+    margin-bottom: var(--globalSectionsPadding);
+  }
+
+  .imageWrap{
+    margin-top: var(--globalSectionsPadding);
+    position: relative;
+    height: 90vh;
+
+    .textAbout{
+      position: absolute;
+      max-width: 500px;
+      width: 50%;
+      top: 30%;
+      font-size: var(--h5);
+      font-weight: 500;
+      line-height: var(--lineHeightXL);
+      a{
+        font-weight: 600;
+        color: var(--colorBlack);
+        white-space: nowrap;
+        padding: var(--chakra-space-1) var(--chakra-space-2);
+        border-radius: var(--chakra-radii-full);
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.52) 70%, rgb(94, 215, 209) 100%);
+        background-size: 600% 100%;
+        background-position: 0% 0%;
+      }
+      span{
+        opacity: 0;
+      }
+    }
+    &:after{
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      bottom: 0;
+      left: calc(((100vw - var(--maxWidth)) / 2)* -1);
+      right: calc(((100vw - var(--maxWidth)) / 2)* -1);
+      background-color: var(--colorGreyLite);
+
+    }
+    img{
+      height: 100%;
+      width: 100%;
+    }
+  }
+}

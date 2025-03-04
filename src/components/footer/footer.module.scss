@@ -1,0 +1,74 @@
+.footer {
+  width: 100%;
+  max-width: var(--maxWidth);
+  margin: 0 auto;
+
+  .footerTop {
+    padding: var(--inboxPaddingLg);
+
+    .contactWithMe {
+      font-size: var(--pL);
+      font-weight: 700;
+      background: radial-gradient(closest-side at 30% 90%  , #b5b0b0  ,#000, #666 , #b5b0b0,#000);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-position: 0% 200%;
+      background-size: 500% 1500%;
+      transition: all var(--trTime4) ease-in-out;
+      color: #fff;
+
+      &:hover {
+        background-position: 50% 200%;
+      }
+    }
+
+    .footerSocialIconWrap {
+
+      .footerSocialLink {
+        opacity: 0.5;
+        transition: all var(--trTime1) ease-in-out;
+        width: 30px;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+
+    .footerMailLink {
+      display: flex;
+      font-size: var(--pL);
+      line-height: 1;
+      font-weight: 700;
+      position: relative;
+      .moveIcon{
+        position: absolute;
+        bottom: 100%;
+        right: 0;
+        svg{
+          overflow: visible;
+          width: 100px;
+          fill: black;
+          transform-origin: 0px 0px; 
+        }
+      }
+
+      >svg {
+        width: 20px;
+      }
+    }
+  }
+
+  .footerBottom {
+    padding: var(--inboxPaddingLg);
+    font-size: var(--pS);
+
+    .footerNavBar {
+      a {
+        font-size: var(--pM);
+        color: var(--colorBlack);
+      }
+    }
+  }
+
+}

@@ -8,7 +8,7 @@ import { useForm } from "react-hook-form";
 
 import { useAuth } from '@/context/AuthContext';
 
-import styles from "@/styles/form.module.scss"
+import styles from "./style.module.scss"
 
 interface FormValues {
   username: string;
@@ -52,7 +52,7 @@ export default function AuthPage() {
             {errors.password?.message && <Text textStyle="xs" color={"red"}>{errors.password?.message}</Text>}
           </div>
 
-          <Button type="submit" colorScheme="green" variant="outline">
+          <Button type="submit" variant="outline">
             Login
           </Button>
         </Stack>

@@ -1,0 +1,26 @@
+.header {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  padding: var(--inboxPaddingSm) var(--globalWrapPadding);
+  position: sticky;
+  top: 0;
+  border-bottom: 1px solid var(--colorBlack);
+  z-index: 1;
+
+
+  .logo{
+    svg{
+      width: 90px;
+    }
+  }
+
+  .navbarWrapper {
+    width: 100%;
+    max-width: var(--maxWidth);
+    a {
+      font-size: var(--pM);
+      color: var(--colorBlack);
+    }
+  }
+}
