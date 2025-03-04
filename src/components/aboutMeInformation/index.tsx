@@ -11,7 +11,7 @@ import styles from "./style.module.scss"
 
 export default function AboutMeInformation() {
 
-    const textRef = useRef();
+    const textRef = useRef<HTMLDivElement>(null);
     const linkRef1 = useRef();
     const linkRef2 = useRef();
 
