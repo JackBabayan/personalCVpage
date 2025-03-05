@@ -21,14 +21,14 @@ export default function PokemonDetail() {
       .then((data) => setData(data));
   }, [id]);
 
-  if (!data) return  <Container maxW="80vw" mt="20px" mb="20px" >
+  if (!data) return  <Container maxW="80vw" mt="20px" mb="20px">
     <Center bg="bg.emphasized" h="100vh" w="100%">
       <Spinner size="lg" />
     </Center>
   </Container>
 
   return (
-    <Container maxW="80vw" mt="20px" mb="20px" >
+    <Container maxW="80vw" mt="20px" mb="20px">
       <Box mb="20px">
 
         <Breadcrumb  spacing='8px' separator={<ChevronRightIcon color='gray.500' />}>

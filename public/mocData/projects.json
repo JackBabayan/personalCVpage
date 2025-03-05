@@ -1,0 +1,50 @@
+[
+    {
+      "id": 1,
+      "name": "Concept Studio",
+      "description": "Concept Studio is a strategically driven, digital design, development, and branding agency that lives at the intersection of creativity and technology. We solve consumer and business problems with our diversified services keeping a balanced ecosystem across the brand.",
+      "url": "https://conceptstudio.com/",
+      "image": "/images/conceptStudio.png",
+      "technologies": ["React" ,"Next.js","GSAP", "SASS" , "Styled Components", "Figma"]
+    },
+    {
+      "id": 2,
+      "name": "Invest in Armenia",
+      "description": "Invest in AM is a B2B platform that bridges investment offers in Armenia with 1000+ potential investors and exporting companies with potential buyers",
+      "url": "https://investin.am/",
+      "image": "/images/investInAm.png",
+      "technologies": ["React" ,"Next.js","GSAP", "SASS" , "Styled Components", "Figma"]
+    },
+    {
+        "id": 3,
+        "name": "Weprofit",
+        "description": "WeProfit is a global marketplace matching and enabling companies to do digital business.The website exists mostly as an instruction manual for what really makes WeProfit interesting: the product. Thus, borrowing from the same design queues from their branding, we built a functional site which helps users navigate the WeProfit marketplace.",
+        "url": "https://weprofit.global/",
+        "image": "/images/weprofit.png",
+        "technologies": ["React" ,"Next.js","GSAP", "SASS" , "Styled Components", "Figma"]
+      },
+    {
+      "id": 4,
+      "name": "Parajanov Museum",
+      "description": "This website, however, truly was a passion project. Parajanov is perhaps one of the most beloved figures in the contemporary Armenian art scene. The man has tried his hand at everything: film directing, screenwriting, art direction, production design…Somehow, we managed to become the “Armenian Dali, Coppola, and Lynch” all at the same time, forever changing the landscape of pretty much every art form he’s ever touched.",
+      "url": "https://parajanovmuseum.am/en/",
+      "image": "/images/parajanovMuseum.png",
+      "technologies": ["React" ,"Next.js","GSAP", "SASS" , "Styled Components", "Figma"]
+    },
+    {
+      "id": 5,
+      "name": "Murakami City",
+      "description": "Murakami City is a unique and innovative project that aims to bring the creative world of renowned Japanese author Haruki Murakami to life. The project was created by a team of passionate and dedicated fans of Murakami's work, with the goal of celebrating his literary legacy and creating an immersive digital experience that captures the essence of his writing.",
+      "url": "https://murakamicity.com/en/",
+      "image": "/images/murakami.png",
+      "technologies": ["React" ,"Next.js","GSAP", "SASS" , "Styled Components", "Figma"]
+    },
+    {
+      "id": 6,
+      "name": "West East",
+      "description": "WestEast is the one of the leaders in the field of flexography printing in Russia. The absolute emphasize on the quality of the final product became the cornerstone of the company's current success. To achieve the next level of company development their team decided to put more resources in creating digital presence that will clearly distinguish them from their competitors and become the basis of their ever growing digital marketing strategy. ",
+      "url": "https://westeast.ru/",
+      "image": "/images/westEast.png",
+      "technologies": ["React" ,"Next.js","GSAP", "SASS" , "Styled Components", "Figma"]
+    }
+  ]

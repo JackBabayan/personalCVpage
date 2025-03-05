@@ -72,15 +72,16 @@ export default function Footer() {
                     </Text>
                 </Flex>
                 <Flex gap="8" align="center" className={styles.footerNavBar}>
-                    {authStatus &&
-                        <>
-                            <Link href="/">Home </Link>
-                            <Link href="/pokemon-page">Pokemon Page </Link>
-                            <Link href="/about">About me</Link>
-                            <Link href="/contact">Contact</Link>
-                            <Link href="/projects">My projects</Link>
-                        </>
+
+                    <Link href="/">Home </Link>
+                    <Link href="/about">About me</Link>
+                    <Link href="/projects">My projects</Link>
+                    {
+                        authStatus &&
+                        <Link href="/my-biography">My Biography</Link>
                     }
+                    <Link href="/contact">Contact</Link>
+
                 </Flex>
 
                 <Text fontSize='sm'>
