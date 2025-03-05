@@ -13,8 +13,8 @@ import styles from './style.module.scss'
 gsap.registerPlugin(ScrollTrigger);
 
 export default function ProjectSection({ projects, loading, error }) {
-    const projectRefs = useRef([]);
-    const sectionRef = useRef(null);
+    const projectRefs = useRef<(HTMLDivElement | null)[]>([]);
+    const sectionRef = useRef<(HTMLDivElement | null)>(null);
 
     // useEffect(() => {
 
@@ -47,7 +47,9 @@ export default function ProjectSection({ projects, loading, error }) {
             <Box
                 className={styles.wrapperItem}
                 key={item.id}
-                ref={(el) => (projectRefs.current[index] = el)}
+                ref={(el) => {
+                    projectRefs.current[index] = el;
+                }}
                 maxW={{ base: "100%", md: "66%" }}
                 justifySelf={index % 2 === 0 ? "start" : "end"}
             >
