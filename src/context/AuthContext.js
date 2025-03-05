@@ -29,7 +29,7 @@ export function AuthProvider({
       Cookies.set("token", password, { expires: 7 }); // Сохраняем токен на 7 дней
 
       setAuthStatus(true)
-      router.push('/pokemon-page');
+      router.push('/my-biography');
       localStorage.setItem('loggedIn', 'true');
     } else {
       alert('Invalid credentials');

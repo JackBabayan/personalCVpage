@@ -1,20 +1,32 @@
 "use client";
 
-// import { Box, Flex } from "@chakra-ui/react";
-// import { useAuth } from '@/context/AuthContext';
 import AboutMeInformation from "@/components/aboutMeInformation"
 import ProjectSection from "@/components/projectSection"
-import { Fragment } from "react";
+import { Fragment , useEffect} from "react";
+import useStore from '@/store/store';
 
 export default function Home() {
 
-  // const { authStatus } = useAuth();
+  const { projects, loading, error, fetchProjects } = useStore();
+
+  useEffect(() => {
+    fetchProjects();
+  }, [fetchProjects]);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
 
 
   return (
     <Fragment>
       <AboutMeInformation />
-      <ProjectSection/>
+      <ProjectSection projects={projects} loading={loading} error={error}/>
     </Fragment>
   );
 }

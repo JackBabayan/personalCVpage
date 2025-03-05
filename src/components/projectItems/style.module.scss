@@ -1,0 +1,16 @@
+.wrapper{
+
+    h5{
+        margin-bottom: var(--inboxPaddingSm);
+        
+    }
+    .text{
+       font-size: var(--pL);
+       
+    }
+    .wrapperTechnology{
+        text-decoration: overline;
+        font-size: var(--pM);
+        margin-top: var(--inboxPaddingMd);
+    }
+}

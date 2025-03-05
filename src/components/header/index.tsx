@@ -18,14 +18,15 @@ export default function Header() {
                     <LogoIcon />
                 </Link>
                 <Flex gap="35" align="center">
-                    {authStatus &&
-                        <>
-                            <Link href="/pokemon-page">Pokemon Page</Link>
-                            <Link href="/about">About me</Link>
-                            <Link href="/contact">Contact</Link>
-                            <Link href="/projects">My projects</Link>
-                        </>
+                    <Link href="/">Home </Link>
+                    <Link href="/about">About Me</Link>
+                    <Link href="/projects">My Projects</Link>
+                    {
+                        authStatus &&
+                        <Link href="/my-biography">My Biography</Link>
                     }
+                    <Link href="/contact">Contact</Link>
+
                 </Flex>
                 {authStatus ? (
                     <Button onClick={logout} variant="outline">Logout</Button>

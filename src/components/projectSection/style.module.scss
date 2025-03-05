@@ -1,6 +1,9 @@
 .wrapper{
-  >*{
-    margin-bottom: var(--globalSectionsPadding);
+  .top,.content{
+    margin-bottom: var(--globalWrapPadding);
   }
-
+  // .wrapperItem{
+  //   opacity: 0;
+  //   transform:translate(0px, 100%);
+  // }
 }
