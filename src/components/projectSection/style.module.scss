@@ -2,8 +2,11 @@
   .top,.content{
     margin-bottom: var(--globalWrapPadding);
   }
-  // .wrapperItem{
-  //   opacity: 0;
-  //   transform:translate(0px, 100%);
-  // }
+  .wrapperItem{
+    opacity: 0;
+    transform:translate(-100px, 50px);
+    &:nth-child(even){
+      transform:translate(100px, 50px);
+    }
+  }
 }

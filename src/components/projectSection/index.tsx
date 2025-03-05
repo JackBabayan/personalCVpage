@@ -16,31 +16,35 @@ export default function ProjectSection({ projects, loading, error }) {
     const projectRefs = useRef<(HTMLDivElement | null)[]>([]);
     const sectionRef = useRef<(HTMLDivElement | null)>(null);
 
-    // useEffect(() => {
-
-    //     if (projectRefs.current.length > 0) {
-    //         projectRefs.current.forEach((ref, index) => {
-    //             if (ref) {
-    //                 console.log(`Animating project ${index}`);
-    //                 gsap.to(ref, {
-    //                     x: index % 2 === 0 ? -100 : 100,
-    //                     opacity: 0,
-    //                     duration: 1,
-    //                     scrollTrigger: {
-    //                         trigger: sectionRef.current,
-    //                         start: "top 80%",
-    //                         end: "bottom 20%",
-    //                         toggleActions: "play none none reverse",
-    //                     },
-    //                 });
-    //             }
-    //         });
-    //     }
-
-    //     return () => {
-    //         ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    //     };
-    // }, [projects]);
+    useEffect(() => {
+        if (projectRefs.current.length > 0) {
+            projectRefs.current.forEach((ref) => {
+                if (ref) {
+                    gsap.fromTo(ref, 
+                        { opacity: 0, y: 50 }, // начальные стили
+                        { 
+                            opacity: 1, 
+                            y: 0, 
+                            x: 0, 
+                            duration: 1, 
+                            ease: "power2.out",
+                            scrollTrigger: {
+                                trigger: ref,
+                                start: "top 80%",
+                                end: "bottom 20%",
+                                toggleActions: "play none none reverse",
+                            }
+                        }
+                    );
+                }
+            });
+        }
+    
+        return () => {
+            ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+        };
+    }, [projects]);
+    
 
     const projests = useMemo(() => {
         return projects?.map((item, index) => (
