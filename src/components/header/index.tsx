@@ -19,6 +19,7 @@ export default function Header() {
                 </Link>
                 <Flex gap="35" align="center">
                     <Link href="/">Home </Link>
+                    <Link href="/experience">Experience</Link>
                     <Link href="/about">About Me</Link>
                     <Link href="/projects">My Projects</Link>
                     {

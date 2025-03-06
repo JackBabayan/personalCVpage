@@ -1,16 +1,31 @@
-.wrapper{
+.wrapper {
 
-    h5{
+    h5 {
         margin-bottom: var(--inboxPaddingSm);
+
+    }
+
+    .text {
+        font-size: var(--pL);
+        margin-bottom: var(--inboxPaddingMd);
+    }
+    
+    a {
+        font-weight: 500;
+        text-decoration: underline;
+        display: flex;
+        align-items: center;
+        gap: 5px;
         
+        svg {
+            width: var(--h5);
+            height: var(--h5);
+        }
     }
-    .text{
-       font-size: var(--pL);
-       
-    }
-    .wrapperTechnology{
+    
+    .wrapperTechnology {
         text-decoration: overline;
         font-size: var(--pM);
-        margin-top: var(--inboxPaddingMd);
+        margin-bottom: var(--inboxPaddingSm);
     }
 }

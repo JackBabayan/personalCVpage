@@ -74,6 +74,7 @@ export default function Footer() {
                 <Flex gap="8" align="center" className={styles.footerNavBar}>
 
                     <Link href="/">Home </Link>
+                    <Link href="/experience">Experience</Link>
                     <Link href="/about">About me</Link>
                     <Link href="/projects">My projects</Link>
                     {

@@ -2,10 +2,9 @@
 
 import { useEffect, useRef } from 'react';
 import Link from "next/link";
-import { useAuth } from "@/context/AuthContext";
-import { Flex, Text, Highlight, Wrap, Box, WrapItem, Grid } from "@chakra-ui/react"
+import { ArrowLeftTopIcon } from "@/styles/icon";
+import { Flex, Text, Wrap, Box, WrapItem, Grid } from "@chakra-ui/react"
 import Image from 'next/image';
-import gsap from 'gsap';
 
 import styles from "./style.module.scss"
 
@@ -29,7 +28,7 @@ export default function ProjectItems({ project }) {
                 <Text className={styles.text}>
                     {project?.description}
                 </Text>
-                <Link href={project?.url}>Home </Link>
+
                 <Wrap spacing=' 5px 20px' className={styles.wrapperTechnology}>
                     {project?.technologies?.map((item, id) => {
                         return (
@@ -39,6 +38,8 @@ export default function ProjectItems({ project }) {
                         )
                     })}
                 </Wrap>
+
+                <Link href={project?.url}>{project?.url} <ArrowLeftTopIcon /></Link>
             </Box>
         </Flex>
     );

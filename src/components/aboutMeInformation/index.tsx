@@ -6,14 +6,18 @@ import { useAuth } from "@/context/AuthContext";
 import { Flex, Text, Highlight, Box, SimpleGrid, Grid } from "@chakra-ui/react"
 import Image from 'next/image';
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import styles from "./style.module.scss"
+
+// Инициализация ScrollTrigger
+gsap.registerPlugin(ScrollTrigger);
 
 export default function AboutMeInformation() {
 
     const textRef = useRef<HTMLDivElement>(null);
-    const linkRef1 = useRef();
-    const linkRef2 = useRef();
+    const linkRef1 = useRef<HTMLDivElement>(null);
+    const linkRef2 = useRef<HTMLDivElement>(null);
 
     const splitText = (text) => {
         return text.split('').map((letter, index) => (
@@ -25,36 +29,57 @@ export default function AboutMeInformation() {
 
     useEffect(() => {
         if (!textRef.current) return;
-    
-        const letters = textRef.current.querySelectorAll("span");
-    
-        const tl = gsap.timeline();
-    
-        // Анимация букв
-        tl.fromTo(
-            letters,
-            { opacity: 0, y: 20 },
-            {
-                opacity: 1,
-                y: 0,
-                duration: 0.01,
-                ease: "power2.out",
-                stagger: 0.01 
-            }
-        );
-    
-        tl.to(
-            [linkRef1.current, linkRef2.current],
-            {
-                backgroundPosition: "100% 50%",
-                duration: 1.5,
-                ease: "power1.inOut"
+        let timerId
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: textRef.current,
+                start: "top 80%",
+                end: "bottom 20%",
+                toggleActions: "play none none reverse",
+                // markers: true, // Покажи триггеры для теста
             },
-            "-=0.5" 
-        );
-    
-    }, []);
-    
+        });
+
+        timerId = setTimeout(() => {
+            const letters = textRef.current.querySelectorAll("span");
+
+            tl.fromTo(
+                letters, {
+                opacity: 0,
+                y: 50
+            },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.01,
+                    ease: "power2.out",
+                    stagger: 0.01,
+                }
+            );
+
+            if (linkRef1.current && linkRef2.current) {
+                tl.to(
+                    [linkRef1.current, linkRef2.current], {
+                    backgroundPosition: "100% 50%",
+                    duration: 1.5,
+                    ease: "power1.inOut"
+                },
+                    "-=0.5"
+                );
+            }
+
+        },100)
+
+        return () => {
+            if (timerId) {
+                clearTimeout(timerId);
+            }
+            tl.kill();
+            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+        };
+
+    }, [textRef, linkRef1, linkRef2]);
+
 
 
     return (
@@ -104,14 +129,18 @@ export default function AboutMeInformation() {
                 </h1>
                 <div className={styles.imageWrap}>
                     <div className={styles.textAbout} ref={textRef}>
-                       {splitText("Hey! If you're interested and want to learn more about me, my skills, and the projects I've worked on, feel free to reach out.")}
-                       <br/> 
+                        {splitText("Hey! If you're interested and want to learn more about me, my skills, and the projects I've worked on, feel free to reach out.")}
+                        <br />
                         {splitText("Just write to me and I will send you a login and password for ")}
-                        <Link ref={linkRef1} href="/login">{splitText("authorization")}</Link> 
+                        <span ref={linkRef1} className={styles.borderedLink}>
+                            <Link href="/login">authorization"</Link>
+                        </span>
                         {splitText("on the site , or you can ")}
-                        <Link ref={linkRef2} href="/file/SaroBabayan_FrontEnd_Dev_CV.pdf" target="_blank" download>
-                        {splitText("Download my CV")}
-                        </Link>
+                        <span ref={linkRef2} className={styles.borderedLink}>
+                            <Link href="/file/SaroBabayan_FrontEnd_Dev_CV.pdf" target="_blank" download>
+                                Download my CV
+                            </Link>
+                        </span>
                         {splitText(", where everything is detailed.")}
                     </div>
 
@@ -123,6 +152,7 @@ export default function AboutMeInformation() {
                         alt='Saro Babayan'
                         quality={100}
                         unoptimized // Отключает оптимизацию
+                        // priority={true}
                     />
                 </div>
             </Box>

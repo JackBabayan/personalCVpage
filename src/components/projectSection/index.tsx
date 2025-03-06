@@ -14,14 +14,13 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function ProjectSection({ projects, loading, error }) {
     const projectRefs = useRef<(HTMLDivElement | null)[]>([]);
-    const sectionRef = useRef<(HTMLDivElement | null)>(null);
 
     useEffect(() => {
         if (projectRefs.current.length > 0) {
             projectRefs.current.forEach((ref) => {
                 if (ref) {
                     gsap.fromTo(ref, 
-                        { opacity: 0, y: 50 }, // начальные стили
+                        { opacity: 0, y: 50 },
                         { 
                             opacity: 1, 
                             y: 0, 
@@ -71,7 +70,7 @@ export default function ProjectSection({ projects, loading, error }) {
     }
 
     return (
-        <Box as="section" ref={sectionRef} className={styles.wrapper}>
+        <Box as="section" className={styles.wrapper}>
             <Center className={styles.top}>
                 <Box maxW="600px" textAlign="center">
                     <h2>Projects</h2>
