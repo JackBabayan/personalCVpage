@@ -29,15 +29,18 @@ export default function Contact() {
       { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }
     );
 
-    tl2.fromTo(
-      leftRef.current,
-      { x: 0, top: "-50px", bottom: "-7px", rotate: 0, transformOrigin: "right bottom" },
-      { x: "-300px", top: 0, bottom: "-50px", rotate: -13, transformOrigin: "right bottom" }
-    ).fromTo(
-      rightRef.current,
-      { x: 0, top: "-50px", bottom: "-7px", rotate: 0, transformOrigin: "left bottom" },
-      { x: "300px", top: 0, bottom: "-50px", rotate: 13, transformOrigin: "left bottom"}
-    );
+    tl2.add([
+      gsap.fromTo(
+        leftRef.current,
+        { x: 0, top: "-50px", bottom: "-7px", rotate: 0, transformOrigin: "right bottom" },
+        { x: "-300px", top: 0, bottom: "-50px", rotate: -13, transformOrigin: "right bottom" }
+      ),
+      gsap.fromTo(
+        rightRef.current,
+        { x: 0, top: "-50px", bottom: "-7px", rotate: 0, transformOrigin: "left bottom" },
+        { x: "300px", top: 0, bottom: "-50px", rotate: 13, transformOrigin: "left bottom" }
+      )
+    ]);
 
     return () => {
       tl.kill();
