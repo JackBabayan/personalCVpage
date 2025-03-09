@@ -18,34 +18,30 @@ export default function Contact() {
 
     const tl = gsap.timeline();
 
+    const tl2 = gsap.timeline({
+      duration: 0.5,
+      ease: "power2.out"
+    });
+
     tl.fromTo(
       titleRef.current,
       { opacity: 0, y: "300px" },
       { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }
     );
 
-    tl.to([leftRef.current, rightRef.current], {
-      duration: 0.2,
-      ease: "power2.out",
-      stagger: 0.3,
-    });
-
-    const leftAnim = gsap.fromTo(
+    tl2.fromTo(
       leftRef.current,
-      { x: 0, top: "-50px", bottom: 0, rotate: 0, transformOrigin: "right bottom" },
-      { x: "-300px", top: 0, bottom: "-50px", rotate: -13, transformOrigin: "right bottom", duration: 0.5 }
-    );
-
-    const rightAnim = gsap.fromTo(
+      { x: 0, top: "-50px", bottom: "-7px", rotate: 0, transformOrigin: "right bottom" },
+      { x: "-300px", top: 0, bottom: "-50px", rotate: -13, transformOrigin: "right bottom" }
+    ).fromTo(
       rightRef.current,
-      { x: 0, top: "-50px", bottom: 0, rotate: 0, transformOrigin: "left bottom" },
-      { x: "300px", top: 0, bottom: "-50px", rotate: 13, transformOrigin: "left bottom", duration: 0.5 }
+      { x: 0, top: "-50px", bottom: "-7px", rotate: 0, transformOrigin: "left bottom" },
+      { x: "300px", top: 0, bottom: "-50px", rotate: 13, transformOrigin: "left bottom"}
     );
 
     return () => {
       tl.kill();
-      leftAnim.kill();
-      rightAnim.kill();
+      tl2.kill();
     };
   }, []);
 
