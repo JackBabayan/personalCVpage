@@ -22,7 +22,7 @@ body {
 }
 
 main {
-    min-height: 80vh;
+    min-height: 65vh;
     width: 100%;
     max-width: var(--maxWidth);
     margin: var(--globalWrapPadding) auto;
@@ -44,6 +44,11 @@ button {
     border: none;
     outline: none;
     border-radius: 0;
+
+    &:focus-visible {
+        border-color: var(--chakra-colors-gray-300) !important;
+        box-shadow: 0 0 0 2px rgb(0 0 0 / 13%) !important;
+    }
 }
 
 input[type='text'],
@@ -69,7 +74,8 @@ button {
         opacity: 0.4;
         pointer-events: none;
     }
-    svg{
+
+    svg {
         width: 20px;
     }
 }

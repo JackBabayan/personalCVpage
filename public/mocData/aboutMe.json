@@ -1,0 +1,73 @@
+{
+  "description": "Hi Everyone!<br/>My name is Saro Babayan, and I am a front-end developer specializing in React. I have over 8 years of experience in web development, focusing on creating modern, user-friendly, and efficient interfaces using technologies such as :",
+  "ending": "In my work, I prioritize performance, usability, and clean, scalable code that is easy to maintain in the future. I also have experience integrating with APIs, REST APIs, and using tools to optimize the development process.I am confident that my experience and expertise can bring value to your team, and I would be happy to discuss potential collaboration.",
+  "technicalSkills": [
+    {
+      "coreTechnologies": {
+        "name": "Core Technologies",
+        "technologies": [
+          "JavaScript",
+          "TypeScript",
+          "React.js",
+          "React Native",
+          "Redux (Redux Toolkit)",
+          "MobX",
+          "Zustand",
+          "Next.js"
+        ]
+      }
+    },
+    {
+      "styling": {
+        "name": "Styling & UI",
+        "technologies": [
+          "HTML5",
+          "CSS3",
+          "LESS",
+          "SASS",
+          "Bootstrap",
+          "Ant Design",
+          "Material UI",
+          "GSAP",
+          "Styled Components"
+        ]
+      }
+    },
+    {
+      "tools": {
+        "name": "Development Tools",
+        "technologies": [
+          "Git",
+          "GitLab",
+          "Webpack",
+          "Vite",
+          "Babel",
+          "Tampermonkey"
+        ]
+      }
+    },
+    {
+      "ui": {
+        "name": "UX/UI",
+        "technologies": [
+          "Figma (Development Mode)",
+          "Adobe XD",
+          "Photoshop",
+          "solid understanding of UI/UX principles"
+        ]
+      }
+    },
+    {
+      "methodologies": {
+        "name": "Methodologies",
+        "technologies": [
+          "OOP",
+          "SOLID",
+          "Component-based architecture",
+          "Design Systems",
+          "responsive and adaptive design, performance optimization"
+        ]
+      }
+    }
+  ]
+}

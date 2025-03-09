@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Box, Button, FormControl, FormLabel, Input, Textarea, VStack, Text } from "@chakra-ui/react";
+import { MailIcon } from "@/styles/icon";
 
 export default function EmailForm() {
     const [formData, setFormData] = useState({ name: "", email: "", message: "" });
@@ -32,7 +33,7 @@ export default function EmailForm() {
             <form onSubmit={handleSubmit}>
                 <VStack spacing={4}>
                     <FormControl isRequired>
-                        <FormLabel>Ваше имя</FormLabel>
+                        <FormLabel>Name</FormLabel>
                         <Input type="text" name="name" value={formData.name} onChange={handleChange} />
                     </FormControl>
 
@@ -42,11 +43,13 @@ export default function EmailForm() {
                     </FormControl>
 
                     <FormControl isRequired>
-                        <FormLabel>Сообщение</FormLabel>
+                        <FormLabel>Message</FormLabel>
                         <Textarea name="message" value={formData.message} onChange={handleChange} />
                     </FormControl>
 
-                    <Button type="submit" colorScheme="blue" width="full">Отправить</Button>
+                    <Button type="submit" rightIcon={<MailIcon />} colorScheme={'teal'} minWidth={'200px'}>
+                        Send
+                    </Button>
 
                     {status && <Text color={status.includes("Ошибка") ? "red.500" : "green.500"}>{status}</Text>}
                 </VStack>
