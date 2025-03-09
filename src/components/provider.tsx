@@ -4,11 +4,11 @@ import { ChakraProvider, extendTheme } from "@chakra-ui/react"
 import { ThemeProvider } from "next-themes"
 
 const theme = extendTheme({
-  fonts: {
-    heading: 'var(--font-rubik)',
-    body: 'var(--font-rubik)',
-  },
   components: {
+    fonts: {
+      heading: "Poppins, sans-serif",
+      body: "Poppins, sans-serif", 
+    },
     Button: {
       baseStyle: {
         fontWeight: "bold",

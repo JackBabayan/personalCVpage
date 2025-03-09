@@ -1,4 +1,4 @@
-@import 'variables';
+@use 'variables' as *;
 
 *,
 :before,
@@ -10,11 +10,12 @@
 
 * {
     -webkit-locale: auto;
+    font-family: var(--font-poppins), sans-serif;
 }
 
 body {
     position: relative;
-    // font-family: 'Poppins', sans-serif;
+    font-family: var(--font-poppins), sans-serif;
     font-size: var(--pL);
     color: var(--colorGrey);
     line-height: var(--lineHeightS);

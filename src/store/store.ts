@@ -5,13 +5,13 @@ import axios from 'axios';
 interface AboutMe {
   description: string;
   ending: string;
-  technicalSkills: {
+  technicalSkills: [{
     coreTechnologies: { name: string, technologies: string[] },
     styling: { name: string, technologies: string[] },
     tools: { name: string, technologies: string[] },
     ui: { name: string, technologies: string[] },
     methodologies: { name: string, technologies: string[] }
-  };
+  }];
 }
 
 interface Project {
