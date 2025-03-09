@@ -8,6 +8,11 @@
     .text {
         font-size: var(--pL);
         margin-bottom: var(--inboxPaddingMd);
+        span{
+            color: var(--chakra-colors-teal-300);
+            text-decoration: underline;
+            cursor: pointer;
+        }
     }
     
     a {

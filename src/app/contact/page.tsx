@@ -51,7 +51,7 @@ export default function Contact() {
   return (
     <section className={styles.contactWrapper}>
       <Flex justifyContent={"center"} mb={10}>
-        <h3 ref={titleRef}>Contact with me</h3>
+        <h3 ref={titleRef}>Contact me</h3>
       </Flex>
       <Box className={styles.container}>
         <div className={styles.left} ref={leftRef}>

@@ -29,7 +29,7 @@ export default function AuthPage() {
   });
 
   return (
-    <Box p={8} maxW="md" mx="auto">
+    <Box maxW="md" mx="auto" p={6} borderWidth={1} borderRadius="lg" boxShadow="md">
       <form onSubmit={onSubmit} className={styles.formWrapper}>
         <Stack gap={4} align="center">
           <div className={styles.formItem}>

@@ -51,7 +51,7 @@ export default function Footer() {
                         </div>
                     </Link>
                 </Box>
-                <div className={styles.contactWithMe}>Contact with me and we can collaborate</div>
+                <div className={styles.contactWithMe}>Contact me and we can collaborate</div>
                 <Flex gap="25" align="center" className={styles.footerSocialIconWrap}>
                     <Link aria-label="social" href="https://t.me/Jack9690" target="_blank" className={styles.footerSocialLink}>
                         <TelegramIcon />

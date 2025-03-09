@@ -19,13 +19,13 @@ export default function ProjectSection({ projects, loading, error }) {
         if (projectRefs.current.length > 0) {
             projectRefs.current.forEach((ref) => {
                 if (ref) {
-                    gsap.fromTo(ref, 
+                    gsap.fromTo(ref,
                         { opacity: 0, y: 50 },
-                        { 
-                            opacity: 1, 
-                            y: 0, 
-                            x: 0, 
-                            duration: 1, 
+                        {
+                            opacity: 1,
+                            y: 0,
+                            x: 0,
+                            duration: 1,
                             ease: "power2.out",
                             scrollTrigger: {
                                 trigger: ref,
@@ -38,12 +38,12 @@ export default function ProjectSection({ projects, loading, error }) {
                 }
             });
         }
-    
+
         return () => {
             ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
         };
     }, [projects]);
-    
+
 
     const projests = useMemo(() => {
         return projects?.map((item, index) => (
@@ -76,10 +76,7 @@ export default function ProjectSection({ projects, loading, error }) {
                     <h2>Projects</h2>
                     <Box>
                         <Text>
-                            My expertise includes React, TypeScript, Redux Toolkit, REST APIs, Next.js, Webpack,
-                            Vite, Babel, and other technologies such as HTML, CSS, SCSS, LESS, Ant Design, GSAP, Chakra UI, MUI, and Tampermonkey.
-                            I focus on writing clean, scalable, and maintainable code while ensuring optimal performance and usability. I also have experience
-                            integrating REST APIs and utilizing various tools to streamline the development process.
+                        This section presents projects that in my opinion deserve your attention. All of them are developed by React.js using Next.js for faster operation , optimization and SEO.
                         </Text>
                     </Box>
                 </Box>

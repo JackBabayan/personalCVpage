@@ -1,14 +1,29 @@
 "use client";
 
-import { useEffect, useRef } from 'react';
+import { useState } from 'react';
 import Link from "next/link";
 import { ArrowLeftTopIcon } from "@/styles/icon";
-import { Flex, Text, Wrap, Box, WrapItem, Grid } from "@chakra-ui/react"
+import { Flex, Text, Wrap, Box, WrapItem, Button } from "@chakra-ui/react"
 import Image from 'next/image';
 
 import styles from "./style.module.scss"
 
-export default function ProjectItems({ project }) {
+type projectTypes = {
+    id: number,
+    name: string,
+    description: string,
+    url: string,
+    image: string,
+    technologies: [string],
+}
+
+type projectTypeItem = projectTypes[]
+
+export default function ProjectItems({ project }: projectTypeItem) {
+
+    const [isExpanded, setIsExpanded] = useState(false);
+    const MAX_LENGTH = 100;
+
 
     return (
         <Flex className={styles.wrapper} gap={'30'}>
@@ -26,7 +41,13 @@ export default function ProjectItems({ project }) {
                     {project?.name}
                 </h5>
                 <Text className={styles.text}>
-                    {project?.description}
+                    {isExpanded ? project?.description : project?.description.slice(0, MAX_LENGTH) + (project?.description.length > MAX_LENGTH ? "... " : " ")}&nbsp;
+
+                    {project?.description.length > MAX_LENGTH && (
+                        <span onClick={() => setIsExpanded(!isExpanded)} >
+                            {isExpanded ? "Hide" : "Show more"}
+                        </span>
+                    )}
                 </Text>
 
                 <Wrap spacing=' 5px 20px' className={styles.wrapperTechnology}>
@@ -41,6 +62,6 @@ export default function ProjectItems({ project }) {
 
                 <Link href={project?.url}>{project?.url} <ArrowLeftTopIcon /></Link>
             </Box>
-        </Flex>
+        </Flex >
     );
 }

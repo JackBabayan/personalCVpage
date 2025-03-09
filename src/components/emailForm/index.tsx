@@ -12,7 +12,7 @@ export default function EmailForm() {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        setStatus("Отправка...");
+        setStatus("Sending...");
 
         const response = await fetch("https://script.google.com/macros/s/AKfycbxXJ6kzKzcumAZZMOdtpB-7yRH_Ew8IGELofMb_X_n1v1w8yVyt3xYQBPb-SYTvpiYZYQ/exec", {
             method: "POST",
@@ -21,10 +21,10 @@ export default function EmailForm() {
         });
 
         if (response.ok) {
-            setStatus("✅ Сообщение отправлено!");
+            setStatus("✅ ok!");
             setFormData({ name: "", email: "", message: "" });
         } else {
-            setStatus("❌ Ошибка отправки");
+            setStatus("❌ Error");
         }
     };
 
