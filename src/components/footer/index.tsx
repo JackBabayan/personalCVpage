@@ -68,7 +68,7 @@ export default function Footer() {
             <Flex gap="8" align="center" justify="space-between" className={styles.footerBottom}>
                 <Flex gap="8" align="center">
                     <Text fontSize='sm'>
-                        © 2025 · sarobabyan · All rights reserved
+                        © 2025 · SaroBabyan · All rights reserved
                     </Text>
                 </Flex>
                 <Flex gap="8" align="center" className={styles.footerNavBar}>

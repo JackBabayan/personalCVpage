@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from "next/link";
 import { ArrowLeftTopIcon } from "@/styles/icon";
-import { Flex, Text, Wrap, Box, WrapItem, Button } from "@chakra-ui/react"
+import { Flex, Text, Wrap, Box, WrapItem } from "@chakra-ui/react"
 import Image from 'next/image';
 
 import styles from "./style.module.scss"

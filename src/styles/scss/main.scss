@@ -20,13 +20,20 @@ body {
     color: var(--colorGrey);
     line-height: var(--lineHeightS);
     -webkit-font-smoothing: antialiased;
+    
 }
 
 main {
     min-height: 65vh;
     width: 100%;
-    max-width: var(--maxWidth);
-    margin: var(--globalWrapPadding) auto;
+    margin: var(--globalWrapPadding) 0;
+    display: grid !important;
+    justify-content: center;
+    justify-content: center;
+    overflow: hidden;
+    >section{
+        max-width: var(--maxWidth);
+    }
 }
 
 
