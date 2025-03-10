@@ -9,17 +9,19 @@ import Image from 'next/image';
 import styles from "./style.module.scss"
 
 type projectTypes = {
-    id: number,
-    name: string,
-    description: string,
-    url: string,
-    image: string,
-    technologies: [string],
+    id: number;
+    name: string;
+    description: string;
+    url: string;
+    image: string;
+    technologies: [string];
 }
 
-type projectTypeItem = projectTypes[]
+type ProjectItemsProps = {
+    project: projectTypes;
+}
 
-export default function ProjectItems({ project }: projectTypeItem) {
+export default function ProjectItems({ project }: ProjectItemsProps) {
 
     const [isExpanded, setIsExpanded] = useState(false);
     const MAX_LENGTH = 100;
