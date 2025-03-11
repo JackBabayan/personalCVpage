@@ -39,9 +39,9 @@ export default function ProjectItems({ project }: ProjectItemsProps) {
                 unoptimized // Отключает оптимизацию
             />
             <Box>
-                <h5>
+                <h4>
                     {project?.name}
-                </h5>
+                </h4>
                 <Text className={styles.text}>
                     {isExpanded ? project?.description : project?.description.slice(0, MAX_LENGTH) + (project?.description.length > MAX_LENGTH ? "... " : " ")}&nbsp;
 

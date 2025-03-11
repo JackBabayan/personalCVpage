@@ -34,7 +34,6 @@ const About = () => {
       <h3>
         About Me
       </h3>
-
   
       <Box mb={6}>
         <Text fontSize="lg" dangerouslySetInnerHTML={{ __html: aboutMe?.description || '' }} />

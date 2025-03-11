@@ -6,7 +6,8 @@
   .imageWrap {
     margin-top: var(--globalSectionsPadding);
     position: relative;
-    padding: var(--globalWrapPadding);
+    padding: var(--globalWrapPadding) 0;
+    min-height: 80vh;
 
     .textAbout {
       position: relative;
@@ -38,8 +39,8 @@
       z-index: -1;
       top: 0;
       bottom: 0;
-      left: calc(((100vw - var(--maxWidth)) / 2)* -1);
-      right: calc(((100vw - var(--maxWidth)) / 2)* -1);
+      left: -50vw;
+      right: -50vw;
       background-color: var(--colorGreyLite);
 
     }
@@ -48,12 +49,10 @@
       position: absolute;
       height: 100%;
       width: 100%;
-      object-position: -1200%;
       top: 0;
       bottom: 0;
       z-index: 1;
-      right: 0;
-      left: 0;
+      right: -26%;
     }
   }
 }

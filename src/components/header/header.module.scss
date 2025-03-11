@@ -6,11 +6,29 @@
   position: sticky;
   top: 0;
   border-bottom: 1px solid var(--colorBlack);
-  z-index: 1;
+  z-index: 10;
+
+  .navLink {
+    position: relative;
+    transition: color 0.3s ease-in-out;
+
+    &:hover {
+        color: var(--chakra-colors-teal-500);
+    }
+}
+
+.underline {
+    position: absolute;
+    bottom: -24px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--chakra-colors-teal-300);
+}
 
 
-  .logo{
-    svg{
+  .logo {
+    svg {
       width: 90px;
     }
   }
@@ -18,6 +36,7 @@
   .navbarWrapper {
     width: 100%;
     max-width: var(--maxWidth);
+
     a {
       font-size: var(--pM);
       color: var(--colorBlack);

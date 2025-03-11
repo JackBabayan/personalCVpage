@@ -26,10 +26,10 @@ body {
 main {
     min-height: 65vh;
     width: 100%;
-    margin: var(--globalWrapPadding) 0;
-    display: grid !important;
-    justify-content: center;
-    justify-content: center;
+    padding: var(--globalWrapPadding);
+    // display: grid !important;
+    // justify-content: center;
+    // justify-content: center;
     overflow: hidden;
     >section{
         max-width: var(--maxWidth);

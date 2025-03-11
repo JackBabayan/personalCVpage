@@ -14,7 +14,7 @@
     "@gsap/react": "^2.1.2",
     "@types/node": "^22.7.4",
     "axios": "^1.8.1",
-    "framer-motion": "^10.12.16",
+    "framer-motion": "^10.18.0",
     "gsap": "^3.12.7",
     "js-cookie": "^3.0.5",
     "next": "^15.1.3",

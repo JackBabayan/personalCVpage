@@ -72,11 +72,11 @@ export default function ProjectSection({ projects, loading, error }) {
     return (
         <Box as="section" className={styles.wrapper}>
             <Center className={styles.top}>
-                <Box maxW="600px" textAlign="center">
+                <Box maxW="700px" textAlign="center">
                     <h2>Projects</h2>
                     <Box>
-                        <Text>
-                        This section presents projects that in my opinion deserve your attention. All of them are developed by React.js using Next.js for faster operation , optimization and SEO.
+                        <Text className={styles.description}>
+                            This section presents projects that in my opinion deserve your attention. All of them are developed by React.js using Next.js for faster operation , optimization and SEO.
                         </Text>
                     </Box>
                 </Box>

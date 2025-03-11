@@ -2,6 +2,7 @@ import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
 import axios from 'axios';
 
+
 interface AboutMe {
   description: string;
   ending: string;
@@ -17,6 +18,16 @@ interface AboutMe {
 interface Project {
   id: number;
   name: string;
+  description: string;
+  url: string;
+  image: string;
+  technologies: string[];
+}
+
+interface PortfolioTab {
+  tab: string;
+  date:string,
+  projects: Project[];
 }
 
 interface Experience {
@@ -31,11 +42,13 @@ interface StoreState {
   aboutMe: AboutMe | null;
   projects: Project[];
   experiences: Experience[];
+  portfolio: PortfolioTab[];
   loading: boolean;
   error: string | null;
   fetchProjects: () => Promise<void>;
   fetchExperiences: () => Promise<void>;
   fetchAboutMe: () => Promise<void>;
+  fetchPortfolio: () => Promise<void>;
 }
 
 const useStore = create<StoreState>()(
@@ -43,6 +56,7 @@ const useStore = create<StoreState>()(
     aboutMe: null,
     projects: [],
     experiences: [],
+    portfolio: [],
     loading: false,
     error: null,
     fetchAboutMe: async () => {
@@ -61,7 +75,7 @@ const useStore = create<StoreState>()(
     fetchProjects: async () => {
       set({ loading: true, error: null });
       try {
-        const response = await axios.get<Project[]>('/mocData/projects.json');
+        const response = await axios.get<Project[]>('/mocData/projectsHome.json');
         set({ projects: response.data, loading: false });
       } catch (error) {
         set({
@@ -79,6 +93,19 @@ const useStore = create<StoreState>()(
       } catch (error) {
         set({
           error: axios.isAxiosError(error) ? error.message : 'Failed to fetch experiences',
+          loading: false,
+        });
+      }
+    },
+
+    fetchPortfolio: async () => {
+      set({ loading: true, error: null });
+      try {
+        const response = await axios.get<PortfolioTab[]>('/mocData/portfolio.json');
+        set({ portfolio: response.data , loading: false });
+      } catch (error) {
+        set({
+          error: axios.isAxiosError(error) ? error.message : 'Failed to fetch portfolio',
           loading: false,
         });
       }

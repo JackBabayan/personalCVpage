@@ -4,20 +4,20 @@ import { ChakraProvider, extendTheme } from "@chakra-ui/react"
 import { ThemeProvider } from "next-themes"
 
 const theme = extendTheme({
+  fonts: {
+    heading: "Poppins, sans-serif",
+    body: "Poppins, sans-serif", 
+  },
   components: {
-    fonts: {
-      heading: "Poppins, sans-serif",
-      body: "Poppins, sans-serif", 
-    },
     Button: {
       baseStyle: {
-        fontWeight: "bold",
+        fontWeight: "500",
       },
       variants: {
         solid: {
-          bg: "black",
+          bg: "#4FD1C5",
           color: "white",
-          _hover: { bg: "gray.700" },
+          _hover: { bg: "#319795" },
         },
       },
     },

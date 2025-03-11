@@ -4,6 +4,9 @@ import AboutMeInformation from "@/components/aboutMeInformation"
 import ProjectSection from "@/components/projectSection"
 import { Fragment , useEffect} from "react";
 import useStore from '@/store/store';
+import {
+  Center, Text, Spinner
+} from "@chakra-ui/react";
 
 export default function Home() {
 
@@ -14,11 +17,19 @@ export default function Home() {
   }, [fetchProjects]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <Center height="100vh">
+        <Spinner size="xl" color="teal.500" />
+      </Center>
+    );
   }
 
   if (error) {
-    return <div>Error: {error}</div>;
+    return (
+      <Center height="100vh">
+        <Text fontSize="xl" color="red.500">Error: {error}</Text>
+      </Center>
+    );
   }
 
 

@@ -1,6 +1,6 @@
 .contactWrapper {
-  overflow: hidden;
   min-height: 65vh;
+  width: 100%;
   h3 {
     opacity: 0;
     transform: translateY(300px);
@@ -8,6 +8,7 @@
   }
   .container{
     position: relative;
+    width: 100%;
     .right, .left{
       overflow: hidden;
       position: absolute;
