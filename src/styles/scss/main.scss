@@ -33,6 +33,7 @@ main {
     overflow: hidden;
     >section{
         max-width: var(--maxWidth);
+        margin: 0 auto;
     }
 }
 

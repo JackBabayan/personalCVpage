@@ -10,7 +10,7 @@ import useStore from "@/store/store";
 import styles from './style.module.scss';
 
 type projectTypes = {
-  technologies: string[]; // Вместо [string]
+  technologies: string[];
 };
 
 
