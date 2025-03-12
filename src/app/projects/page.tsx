@@ -9,10 +9,6 @@ import useStore from "@/store/store";
 
 import styles from './style.module.scss';
 
-type projectTypes = {
-  technologies: string[];
-};
-
 
 export default function PortfolioPage() {
 
@@ -45,7 +41,7 @@ export default function PortfolioPage() {
 
   return (
     <section className={styles.wrapper}>
-      <Box className={styles.top} mb={6}>
+      <Box className={styles.top} maxWidth={{ base: '100%', md: '70%', lg: '70%' }}>
         <h3>
           Portfolio
         </h3>
@@ -60,11 +56,12 @@ export default function PortfolioPage() {
         variant="soft-rounded"
         colorScheme="teal"
         onChange={setActiveTab}
+        className={styles.tabsWrap}
       >
-        <TabList display="flex" justifyContent="center" flexWrap="wrap" mb={6}>
+        <TabList display="flex" justifyContent="center" flexWrap="wrap" className={styles.tabsTop}>
           <Tab fontSize="lg" fontWeight="medium">All</Tab>
           {portfolio.map((tabItem, index) => (
-            <Tab key={index} fontWeight="medium">
+            <Tab key={index} fontWeight="medium" minWidth={'230px'}>
               <Box>
                 <Text fontSize="Lg">
                   {tabItem.tab}
@@ -77,11 +74,17 @@ export default function PortfolioPage() {
 
         <TabPanels>
           <TabPanel>
-            <SimpleGrid columns={{ base: 1 }} spacing={6}>
-              {filteredProjects.map((project, ind) => (
-                <Box key={ind} boxShadow="lg" borderRadius="md" p={4} bg="white">
-                  <ProjectItems project={{ ...project, technologies: [project.technologies[0]] }} />
-
+            <SimpleGrid columns={1} spacing={10} className={styles.greedWrap}>
+              {filteredProjects.map((project, index) => (
+                <Box
+                  key={index}
+                  boxShadow="lg"
+                  borderRadius="md"
+                  p={4}
+                  bg="white"
+                  maxWidth={{ base: '100%', md: '70%', lg: '70%' }}
+                >
+                  <ProjectItems project={project} />
                 </Box>
               ))}
             </SimpleGrid>
@@ -89,11 +92,17 @@ export default function PortfolioPage() {
 
           {portfolio.map((item, index) => (
             <TabPanel key={index}>
-              <SimpleGrid columns={{ base: 1 }} spacing={6}>
+              <SimpleGrid columns={1} spacing={10} className={styles.greedWrap}>
                 {item?.projects?.map((project, ind) => (
-                  <Box key={ind} boxShadow="lg" borderRadius="md" p={4} bg="white">
-                    <ProjectItems project={{ ...project, technologies: [project.technologies[0]] }} />
-
+                  <Box
+                    key={ind}
+                    boxShadow="lg"
+                    borderRadius="md"
+                    p={4}
+                    bg="white"
+                    maxWidth={{ base: '100%', md: '70%', lg: '70%' }}
+                  >
+                    <ProjectItems project={project} />
                   </Box>
                 ))}
               </SimpleGrid>

@@ -14,7 +14,7 @@ type projectTypes = {
     description: string;
     url: string;
     image: string;
-    technologies: [string];
+    technologies: string[];
 }
 
 type ProjectItemsProps = {

@@ -1,6 +1,21 @@
 .wrapper {
-  .top{
-   text-align: center;
-   margin-bottom: var(--globalSectionsPadding);
+  .top {
+    text-align: center;
+    margin: 0 auto var(--globalSectionsPadding);
+  }
+  .tabsWrap{
+    .tabsTop{
+      
+      margin-bottom: var(--globalSectionsPadding);
+    }
+
+    .greedWrap{
+      >div{
+        justify-self: start;
+        &:nth-child(2n){
+          justify-self: end;
+        }
+      }
+    }
   }
 }

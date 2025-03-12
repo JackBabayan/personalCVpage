@@ -8,7 +8,7 @@
         "name": "Digital platform MSP.RF (Цифровая платформа МСП.РФ)",
         "description": "Government platform for supporting entrepreneurs, self-employed people and those who plan to start their own business",
         "url": "https://xn--l1agf.xn--p1ai/",
-        "image": "/images/conceptStudio.png",
+        "image": "/images/msp.png",
         "technologies": [
           "React",
           "Redux Toolkit",
@@ -125,17 +125,93 @@
     "projects": [
       {
         "id": 1,
-        "name": "Concept Studio",
-        "description": "Concept Studio is a strategically driven, digital design, development, and branding agency that lives at the intersection of creativity and technology. We solve consumer and business problems with our diversified services keeping a balanced ecosystem across the brand.",
-        "url": "https://conceptstudio.com/",
-        "image": "/images/conceptStudio.png",
+        "name": "Laboratoire Naturel",
+        "description": "Laboratoire Naturel is a Swiss company manufacturing wipes, other personal care products and spunlace of the highest quality.",
+        "url": "https://www.labnaturel.com/",
+        "image": "/images/labNat.png",
         "technologies": [
-          "React",
-          "Next.js",
-          "GSAP",
-          "SASS",
-          "Styled Components",
-          "Figma"
+          "HTML5",
+          "CSS3",
+          "Java Script",
+          "JQuery",
+          "Figma",
+          "Adobe XD"
+        ]
+      },
+      {
+        "id": 2,
+        "name": "ACBA digital",
+        "description": "acba digital is a new, innovative platform, which is designed to replace traditional banking transactions. The platform operates both as a web version and as an application for individuals and legal entities. acba digital allows you to BANK easy and convenient.",
+        "url": "https://www.acba.am/en/business/e-banking-services/acba-digital-platform",
+        "image": "/images/acba.png",
+        "technologies": [
+          "HTML5",
+          "CSS3",
+          "Java Script",
+          "JQuery",
+          "Figma",
+          "Adobe XD"
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Polixis",
+        "description": "Polixis is a best-in-class RegTech and advisory firm that offers a bespoke blend of human expertise with machine intelligence and big data. ARDIS, the flagship software, stands for Applied Risk & Data Intelligence Solution. It is a next generation AML, sanctions and KYC automation software, designed for both Front and Compliance Teams.",
+        "url": "https://polixis.com/start-up-and-clients/",
+        "image": "/images/polixis.png",
+        "technologies": [
+          "HTML5",
+          "CSS3",
+          "Java Script",
+          "JQuery",
+          "Figma",
+          "Adobe XD"
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Norman credit",
+        "description": "Norman Credit is one of the leading and the most trustworthy Universal Credit Organizations of Armenia providing financial services and credit products for business and individuals.",
+        "url": "https://www.normancredit.am/en/",
+        "image": "/images/norman.png",
+        "technologies": [
+          "HTML5",
+          "CSS3",
+          "Java Script",
+          "JQuery",
+          "Figma",
+          "Adobe XD"
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Edelbloom",
+        "description": "Edelbloom is a Swiss brand producing baby wet wipes containing antioxidant Edelweiss extract to soothe baby’s skin and an abundance of purified water to make clean-up easy. Each pack includes alternating smooth and textured wipes that are extra durable but extremely gentle, to withstand the toughest messes and the most sensitive skin.",
+        "url": "https://www.edelbloom.com/",
+        "image": "/images/edelbloom.png",
+        "technologies": [
+          "HTML5",
+          "CSS3",
+          "Java Script",
+          "JQuery",
+          "Figma",
+          "Adobe XD"
+        ]
+      },
+
+      {
+        "id": 6,
+        "name": "Harvy Fruits",
+        "description": "Harvy Fruits produces a wide range of dried fruits. Each year Harvy processes approximately 3118 tons of fruits. All the products produced by the company are: Natural , Do not contain GMO’s ,With no added flavour , Has a luscious taste",
+        "url": "https://harvyfruits.com/en/products",
+        "image": "/images/harvyfruits.png",
+        "technologies": [
+          "HTML5",
+          "CSS3",
+          "Java Script",
+          "JQuery",
+          "Figma",
+          "Adobe XD"
         ]
       }
     ]

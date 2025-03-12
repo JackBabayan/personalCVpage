@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { Box, Heading, Text, List, ListItem, VStack, Spinner, Center } from "@chakra-ui/react";
+import { Box, Heading, Text, Flex, ListItem, VStack, Spinner, Center } from "@chakra-ui/react";
 import useStore from '@/store/store';
 
 import styles from "./style.module.scss"
@@ -39,16 +39,15 @@ const About = () => {
         <Text fontSize="lg" dangerouslySetInnerHTML={{ __html: aboutMe?.description || '' }} />
       </Box>
 
-      <VStack spacing={6} align="start">
+      <VStack spacing={6} paddingLeft={7} align="start">
         {aboutMe?.technicalSkills && aboutMe.technicalSkills.map((section, index) => (
-          <Box key={index}>
-            <h5>{section.coreTechnologies?.name || section.styling?.name || section.tools?.name || section.ui?.name || section.methodologies?.name}</h5>
-            <List spacing={2}>
+          <Flex key={index} gap={1}>
+            <h5>{section.coreTechnologies?.name || section.styling?.name || section.tools?.name || section.ui?.name || section.methodologies?.name} : </h5>
               {(section.coreTechnologies?.technologies || section.styling?.technologies || section.tools?.technologies || section.ui?.technologies || section.methodologies?.technologies)?.map((tech, idx) => (
-                <ListItem key={idx}>{tech}</ListItem>
+                <Text key={idx}>{tech} {(section.coreTechnologies?.technologies || section.styling?.technologies || section.tools?.technologies || section.ui?.technologies || section.methodologies?.technologies).length -1 != idx && ","}</Text>
               ))}
-            </List>
-          </Box>
+           
+          </Flex>
         ))}
       </VStack>
       <Box mt={8}>
