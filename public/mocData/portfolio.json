@@ -5,8 +5,8 @@
     "projects": [
       {
         "id": 1,
-        "name": "Digital platform MSP.RF (Цифровая платформа МСП.РФ)",
         "description": "Government platform for supporting entrepreneurs, self-employed people and those who plan to start their own business",
+        "name": "Digital platform MSP.RF (Цифровая платформа МСП.РФ)",
         "url": "https://xn--l1agf.xn--p1ai/",
         "image": "/images/msp.png",
         "technologies": [
@@ -28,8 +28,8 @@
     "projects": [
       {
         "id": 1,
-        "name": "Concept Studio",
         "description": "Concept Studio is a strategically driven, digital design, development, and branding agency that lives at the intersection of creativity and technology. We solve consumer and business problems with our diversified services keeping a balanced ecosystem across the brand.",
+        "name": "Concept Studio",
         "url": "https://conceptstudio.com/",
         "image": "/images/conceptStudio.png",
         "technologies": [
@@ -43,8 +43,8 @@
       },
       {
         "id": 2,
-        "name": "Invest in Armenia",
         "description": "Invest in AM is a B2B platform that bridges investment offers in Armenia with 1000+ potential investors and exporting companies with potential buyers",
+        "name": "Invest in Armenia",
         "url": "https://investin.am/",
         "image": "/images/investInAm.png",
         "technologies": [
@@ -58,8 +58,8 @@
       },
       {
         "id": 3,
-        "name": "Weprofit",
         "description": "WeProfit is a global marketplace matching and enabling companies to do digital business.The website exists mostly as an instruction manual for what really makes WeProfit interesting: the product. Thus, borrowing from the same design queues from their branding, we built a functional site which helps users navigate the WeProfit marketplace.",
+        "name": "Weprofit",
         "url": "https://weprofit.global/",
         "image": "/images/weprofit.png",
         "technologies": [
@@ -73,8 +73,8 @@
       },
       {
         "id": 4,
-        "name": "Parajanov Museum",
         "description": "This website, however, truly was a passion project. Parajanov is perhaps one of the most beloved figures in the contemporary Armenian art scene. The man has tried his hand at everything: film directing, screenwriting, art direction, production design…Somehow, we managed to become the “Armenian Dali, Coppola, and Lynch” all at the same time, forever changing the landscape of pretty much every art form he’s ever touched.",
+        "name": "Parajanov Museum",
         "url": "https://parajanovmuseum.am/en/",
         "image": "/images/parajanovMuseum.png",
         "technologies": [
@@ -88,8 +88,8 @@
       },
       {
         "id": 5,
-        "name": "Murakami City",
         "description": "Murakami City is a unique and innovative project that aims to bring the creative world of renowned Japanese author Haruki Murakami to life. The project was created by a team of passionate and dedicated fans of Murakami's work, with the goal of celebrating his literary legacy and creating an immersive digital experience that captures the essence of his writing.",
+        "name": "Murakami City",
         "url": "https://murakamicity.com/en/",
         "image": "/images/murakami.png",
         "technologies": [
@@ -103,10 +103,26 @@
       },
       {
         "id": 6,
-        "name": "West East",
         "description": "WestEast is the one of the leaders in the field of flexography printing in Russia. The absolute emphasize on the quality of the final product became the cornerstone of the company's current success. To achieve the next level of company development their team decided to put more resources in creating digital presence that will clearly distinguish them from their competitors and become the basis of their ever growing digital marketing strategy. ",
+        "name": "West East",
         "url": "https://westeast.ru/",
         "image": "/images/westEast.png",
+        "technologies": [
+          "React",
+          "Next.js",
+          "GSAP",
+          "SASS",
+          "Styled Components",
+          "Figma"
+        ]
+      }
+      ,
+      {
+        "id": 7,
+        "description": "Having worked with Hexens to design a unique brand identity which took into account their specialty in cybersecurity, we took the next logical step and designed a website to go with it! ",
+        "name": "Hexens",
+        "url": "https://hexens.io/",
+        "image": "/images/Hexens.png",
         "technologies": [
           "React",
           "Next.js",
@@ -125,8 +141,8 @@
     "projects": [
       {
         "id": 1,
-        "name": "Laboratoire Naturel",
         "description": "Laboratoire Naturel is a Swiss company manufacturing wipes, other personal care products and spunlace of the highest quality.",
+        "name": "Laboratoire Naturel",
         "url": "https://www.labnaturel.com/",
         "image": "/images/labNat.png",
         "technologies": [
@@ -140,8 +156,8 @@
       },
       {
         "id": 2,
-        "name": "ACBA digital",
         "description": "acba digital is a new, innovative platform, which is designed to replace traditional banking transactions. The platform operates both as a web version and as an application for individuals and legal entities. acba digital allows you to BANK easy and convenient.",
+        "name": "ACBA digital",
         "url": "https://www.acba.am/en/business/e-banking-services/acba-digital-platform",
         "image": "/images/acba.png",
         "technologies": [
@@ -155,8 +171,8 @@
       },
       {
         "id": 3,
-        "name": "Polixis",
         "description": "Polixis is a best-in-class RegTech and advisory firm that offers a bespoke blend of human expertise with machine intelligence and big data. ARDIS, the flagship software, stands for Applied Risk & Data Intelligence Solution. It is a next generation AML, sanctions and KYC automation software, designed for both Front and Compliance Teams.",
+        "name": "Polixis",
         "url": "https://polixis.com/start-up-and-clients/",
         "image": "/images/polixis.png",
         "technologies": [
@@ -170,8 +186,8 @@
       },
       {
         "id": 4,
-        "name": "Norman credit",
         "description": "Norman Credit is one of the leading and the most trustworthy Universal Credit Organizations of Armenia providing financial services and credit products for business and individuals.",
+        "name": "Norman credit",
         "url": "https://www.normancredit.am/en/",
         "image": "/images/norman.png",
         "technologies": [
@@ -185,8 +201,8 @@
       },
       {
         "id": 5,
-        "name": "Edelbloom",
         "description": "Edelbloom is a Swiss brand producing baby wet wipes containing antioxidant Edelweiss extract to soothe baby’s skin and an abundance of purified water to make clean-up easy. Each pack includes alternating smooth and textured wipes that are extra durable but extremely gentle, to withstand the toughest messes and the most sensitive skin.",
+        "name": "Edelbloom",
         "url": "https://www.edelbloom.com/",
         "image": "/images/edelbloom.png",
         "technologies": [
@@ -198,13 +214,28 @@
           "Adobe XD"
         ]
       },
-
       {
         "id": 6,
-        "name": "Harvy Fruits",
         "description": "Harvy Fruits produces a wide range of dried fruits. Each year Harvy processes approximately 3118 tons of fruits. All the products produced by the company are: Natural , Do not contain GMO’s ,With no added flavour , Has a luscious taste",
+        "name": "Harvy Fruits",
         "url": "https://harvyfruits.com/en/products",
         "image": "/images/harvyfruits.png",
+        "technologies": [
+          "HTML5",
+          "CSS3",
+          "Java Script",
+          "JQuery",
+          "Figma",
+          "Adobe XD"
+        ]
+      }
+      ,
+      {
+        "id": 7,
+        "description": "Based on scientific methods and aromatherapy principles Nairian Cosmetics develops highest quality natural and organic skincare and haircare products that revive and build upon millennia-old traditions of folk medicine and herbalism that are still very much alive in Armenia.",
+        "name": "Nairian Cosmetics",
+        "url": "https://www.nairian.am/en",
+        "image": "/images/nairian.png",
         "technologies": [
           "HTML5",
           "CSS3",

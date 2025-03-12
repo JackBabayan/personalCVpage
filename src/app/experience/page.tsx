@@ -1,6 +1,8 @@
 "use client";
-import { useEffect, useRef } from 'react';
-import { Box, Heading, Text, List, ListItem, VStack, Divider, Spinner, Center, Container } from "@chakra-ui/react";
+import { useEffect } from 'react';
+import { Box, Text, List, ListItem, VStack, Divider, Spinner, Center } from "@chakra-ui/react";
+import Link from "next/link";
+
 import useStore from '@/store/store';
 
 import styles from "./style.module.scss"
@@ -28,7 +30,8 @@ const Experience = () => {
       </Box>
     );
   }
-
+  
+  
   return (
     <section className={styles.contactWrapper}>
       <h3>
@@ -45,9 +48,10 @@ const Experience = () => {
           </Text>
           <Text>{experience.description}</Text>
           <Text fontWeight="bold" mt={2}>Projects:</Text>
+  
           <List spacing={2}>
-            {experience.projects.map((project, idx) => (
-              <ListItem key={idx}>{project}</ListItem>
+            {experience.projects?.map((project, idx) => (
+              <ListItem key={idx}><Link href={project?.url} target="_blank" >{project.name}</Link></ListItem>
             ))}
           </List>
           {index < experiences.length - 1 && <Divider />}

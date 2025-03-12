@@ -4,20 +4,83 @@
     "location": "Russia, Moscow",
     "dates": "Jan 2022 - Jan 2025",
     "description": "Development and implementation of various services for a bank project built on Bitrix24 (MSP Bank) from scratch, using technologies such as React.js, Redux (Redux Toolkit), TypeScript, Ant, Git, GitLab, and other development tools. Ongoing maintenance and modernization of the bank's services to ensure relevance and compliance with the strict regulations of the industry. Code review for team members, discussing and implementing solutions to optimize processes and improve service performance, introducing new functionalities in line with business requirements, and ensuring security and compliance with regulatory standards. Coordination with other teams for the integration of new services and improvements, conducting regular testing and performance analysis, fixing bugs, and addressing technical debt. Supporting documentation and training new team members to improve the overall quality of the team's work.",
-    "projects": ["Digital Platform MSP.RF"]
+    "projects": [
+      {
+        "name": "Digital platform MSP.RF (Цифровая платформа МСП.РФ)",
+        "url": "https://xn--l1agf.xn--p1ai/"
+      }
+    ]
   },
   {
     "position": "REACT.JS DEVELOPER at Concept Studio",
     "location": "Armenia Yerevan",
     "dates": "Mar 2019 - Dec 2022",
     "description": "Website development using React.js, as well as Next.js, Redux (Redux Toolkit), ANT, GSAP, MUI, Git, and many other development technologies. Responsibilities included: Estimating project timelines and complexity, structural (architectural) development, implementation of user and functional interfaces, website animation, code optimization for higher performance and resource efficiency, ensuring high Google Performance scores, ongoing support and modernization of code, and refactoring projects considering legacy features and new business requirements.",
-    "projects": ["Concept Studio", "Invest In Armenia", "Parajanov Museum", "Murakami City", "WestEast"]
+    "projects": [
+      {
+        "name": "Concept Studio",
+        "url": "https://conceptstudio.com/"
+      },
+      {
+        "name": "Invest in Armenia",
+        "url": "https://investin.am/"
+      },
+      {
+        "name": "Hexens",
+        "url": "https://hexens.io/"
+      },
+      {
+        "name": "Weprofit",
+        "url": "https://weprofit.global/"
+      },
+      {
+        "name": "Parajanov Museum",
+        "url": "https://parajanovmuseum.am/en/"
+      },
+      {
+        "name": "Murakami City",
+        "url": "https://murakamicity.com/en/"
+      },
+      {
+        "name": "West East",
+        "url": "https://westeast.ru/"
+      }
+    ]
   },
   {
     "position": "FRONTEND DEVELOPER at ZOOM GRAPHICS",
     "location": "Armenia Yerevan",
     "dates": "Jan 2017 - Feb 2019",
     "description": "Front-end development of websites, including the creation of visual layouts using HTML and styling with CSS (SCSS, LESS), as well as animations implemented with JavaScript (jQuery) and third-party libraries. The goal was to enhance user interaction with the interface while maintaining a high Google Performance score. Responsibilities also included refining existing code and keeping it up to date, as well as developing new features, such as implementing algorithms for calculating various digitized forms commonly found in fintech websites. Additionally, optimizing code to ensure faster and more efficient website performance was a key focus.",
-    "projects": ["ACBA Digital Platform", "EasyPay / Armenian financial services platform", "Normancredit", "Edelbloom Lab", "Naturel", "Harvy Fruits", "FAST Foundation (Foundation for Armenian Science and Technology)", "Polixis / Regulatory Technology solutions for financial institutions"]
+    "projects": [
+      {
+        "name": "Laboratoire Naturel",
+        "url": "https://www.labnaturel.com/"
+      },
+      {
+        "name": "ACBA digital",
+        "url": "https://www.acba.am/en/business/e-banking-services/acba-digital-platform"
+      },
+      {
+        "name": "Polixis",
+        "url": "https://polixis.com/start-up-and-clients/"
+      },
+      {
+        "name": "Norman credit",
+        "url": "https://www.normancredit.am/en/"
+      },
+      {
+        "name": "Edelbloom",
+        "url": "https://www.edelbloom.com/"
+      },
+      {
+        "name": "Harvy Fruits",
+        "url": "https://harvyfruits.com/en/products"
+      },
+      {
+        "name": "Nairian Cosmetics",
+        "url": "https://www.nairian.am/en"
+      }
+    ]
   }
 ]

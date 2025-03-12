@@ -35,7 +35,7 @@ interface Experience {
   location: string;
   dates: string;
   description: string;
-  projects: string[];
+  projects: {name:string , url:string}[];
 }
 
 interface StoreState {
