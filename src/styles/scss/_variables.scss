@@ -70,20 +70,12 @@
 }
 
 
-// @media only screen and (max-width: 1439px) and (min-width: 768px) {
-//     :root {
-//         --h1: 36px;
-//         --h2: 16px;
-//         --h3: 14px;
-//         --h4: 18px;
-//         --h5: 16px;
+@media only screen and (max-width: 1200px) and (min-width: 768px) {
+    :root {
+        --globalWrapPadding:50px;
         
-//         --pL: 14px;
-//         --pM: 13px;
-//         --pS: 12px;
-        
-//     }
-// }
+    }
+}
 
 @media only screen and (max-width: 1024px) {
     :root {
@@ -91,7 +83,15 @@
         --borderMd: 6px;
         --borderLg: 10px;
 
-        --h1: 36px;
+        --h1: 100px;
+        --h2: 70px;
+        --h3: 30px;
+        --h4: 28px;
+        --h5: 20px;
+    
+        --pL: 16px;
+        --pM: 13px;
+        --pS: 12px;
 
 
         --m16: 8px;
@@ -105,11 +105,18 @@
 
 @media only screen and (max-width: 767px) {
     :root {
-        --h1: 26px;
-        --h2: 14px;
-        --h3: 14px;
-        --h4: 14px;
-        --h5:14px;
+
+        --globalWrapPadding:15px;
+
+        --h1: 80px;
+        --h2: 50px;
+        --h3: 25px;
+        --h4: 23px;
+        --h5: 20px;
+    
+        --pL: 14px;
+        --pM: 12px;
+        --pS: 11px;
 
 
         --m8: 4px;
@@ -119,10 +126,6 @@
         --m32: 24px;
         --m40: 24px;
         --m60: 24px;
-
-        --pL: 14px;
-        --pM: 12px;
-        --pS: 12px;
 
         --borderLg: 8px;
     }

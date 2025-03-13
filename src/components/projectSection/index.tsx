@@ -53,7 +53,7 @@ export default function ProjectSection({ projects, loading, error }) {
                 ref={(el) => {
                     projectRefs.current[index] = el;
                 }}
-                maxW={{ base: "100%", md: "66%" }}
+                maxWidth={{ base: '100%', md: '800px', lg: '800px' }}
                 justifySelf={index % 2 === 0 ? "start" : "end"}
             >
                 <ProjectItems project={item} />

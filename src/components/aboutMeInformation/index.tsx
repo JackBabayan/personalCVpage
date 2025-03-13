@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import Link from "next/link";
-import { Text, Highlight, Box, SimpleGrid, Grid } from "@chakra-ui/react";
+import { Text, Highlight, Box, SimpleGrid, Grid, GridItem } from "@chakra-ui/react";
 import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -26,10 +26,10 @@ export default function AboutMeInformation() {
         if (!container.current) return;
 
         setTimeout(() => {
-            if (!textRef.current) return; 
+            if (!textRef.current) return;
 
             const letters = textRef.current.querySelectorAll("span");
-            if (letters.length === 0) return; 
+            if (letters.length === 0) return;
 
             const tl = gsap.timeline({
                 scrollTrigger: {
@@ -63,14 +63,15 @@ export default function AboutMeInformation() {
 
     return (
         <section className={styles.wrapper} ref={container}>
-            <Grid templateColumns='2fr 3fr' gap={6} >
-                <Box>
+            <Grid
+                templateColumns={{ base: "1fr", md: "repeat(2, 1fr)", lg: "repeat(3, 1fr)" }} gap={{ base:5, md: 9, lg: 14 }} >
+                <GridItem colSpan={{ base: 1, md: 2, lg: 1 }}>
                     <h3>
                         Hey there, I’m
                     </h3>
-                </Box>
+                </GridItem>
 
-                <SimpleGrid columns={2} spacing={20}>
+                <GridItem>
                     <Box>
                         <h4>
                             Front-End & <br />React.js Developer
@@ -85,7 +86,9 @@ export default function AboutMeInformation() {
                             </Highlight>
                         </Text>
                     </Box>
+                </GridItem>
 
+                <GridItem>
                     <Box >
                         <h4>
                             Based in<br />
@@ -100,17 +103,17 @@ export default function AboutMeInformation() {
                             </Highlight>
                         </Text>
                     </Box>
-                </SimpleGrid>
+                </GridItem>
             </Grid>
 
             <Box>
                 <h1>Saro Babayan</h1>
                 <div className={styles.imageWrap}>
                     <div className={styles.textAbout} ref={textRef}>
-                        {splitText("Hey! If you're curious about my background—here’s a bit about my education. I studied Economic-Mathematical methods, Accounting, Analysis, and Audit at the Plekhanov Russian University of Economics (2013 – 2017) in Yerevan, Armenia. This gave me strong analytical skills, which later helped in my development career.")}<br/>
-                        {splitText("I initially started in finance, but quickly realized that building digital products was my true passion. So, I switched to front-end development, and it’s been the best decision ever!")}<br/>
+                        {splitText("Hey! If you're curious about my background—here’s a bit about my education. I studied Economic-Mathematical methods, Accounting, Analysis, and Audit at the Plekhanov Russian University of Economics (2013 – 2017) in Yerevan, Armenia. This gave me strong analytical skills, which later helped in my development career.")}<br />
+                        {splitText("I initially started in finance, but quickly realized that building digital products was my true passion. So, I switched to front-end development, and it’s been the best decision ever!")}<br />
                         {splitText("Want to dive deeper into my experience? Check out my full resume : ")}
-                        
+
                         <Link ref={linkRef} href="/file/SaroBabayan_FrontEnd_Dev_CV.pdf" target="_blank" download>
                             {splitText("Download CV")}
                         </Link>
@@ -127,6 +130,6 @@ export default function AboutMeInformation() {
                     />
                 </div>
             </Box>
-        </section>
+        </section >
     );
 }

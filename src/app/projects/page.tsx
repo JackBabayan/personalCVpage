@@ -82,7 +82,7 @@ export default function PortfolioPage() {
                   borderRadius="md"
                   p={4}
                   bg="white"
-                  maxWidth={{ base: '100%', md: '70%', lg: '70%' }}
+                  maxWidth={{ base: '100%', md: '800px', lg: '800px' }}
                 >
                   <ProjectItems project={project} />
                 </Box>
@@ -100,7 +100,7 @@ export default function PortfolioPage() {
                     borderRadius="md"
                     p={4}
                     bg="white"
-                    maxWidth={{ base: '100%', md: '70%', lg: '70%' }}
+                    maxWidth={{ base: '100%', md: '800px', lg: '800px' }}
                   >
                     <ProjectItems project={project} />
                   </Box>

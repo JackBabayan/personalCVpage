@@ -1,11 +1,13 @@
 .footer {
-  width: 100%;
-  max-width: var(--maxWidth);
-  margin: 0 auto;
+  padding: var(--inboxPaddingLg) var(--globalWrapPadding);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap:var(--inboxPaddingLg);
 
   .footerTop {
-    padding: var(--inboxPaddingLg);
-
+    width: 100%;
+    max-width: var(--maxWidth);
     .contactWithMe {
       font-size: var(--pL);
       font-weight: 700;
@@ -60,9 +62,9 @@
   }
 
   .footerBottom {
-    padding: var(--inboxPaddingLg);
     font-size: var(--pS);
-
+    width: 100%;
+    max-width: var(--maxWidth);
     .footerNavBar {
       a {
         font-size: var(--pM);
