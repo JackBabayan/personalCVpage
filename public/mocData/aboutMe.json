@@ -13,7 +13,8 @@
           "Redux (Redux Toolkit)",
           "MobX",
           "Zustand",
-          "Next.js"
+          "Next.js",
+          "Jest"
         ]
       }
     },
@@ -29,7 +30,8 @@
           "Ant Design",
           "Material UI",
           "GSAP",
-          "Styled Components"
+          "Styled Components",
+          "JSS (JavaScript Style Sheets)"
         ]
       }
     },
@@ -61,6 +63,7 @@
       "methodologies": {
         "name": "Methodologies",
         "technologies": [
+          "Microfrontend Architecture",
           "OOP",
           "SOLID",
           "Component-based architecture",
