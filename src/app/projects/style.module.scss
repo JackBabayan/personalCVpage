@@ -3,16 +3,22 @@
     text-align: center;
     margin: 0 auto var(--globalSectionsPadding);
   }
-  .tabsWrap{
-    .tabsTop{
-      
+
+  .tabsWrap {
+    .tabsTop {
       margin-bottom: var(--globalSectionsPadding);
+
+      button {
+        padding-top: var(--chakra-space-1);
+        padding-bottom: var(--chakra-space-1);
+      }
     }
 
-    .greedWrap{
-      >div{
+    .greedWrap {
+      >div {
         justify-self: start;
-        &:nth-child(2n){
+
+        &:nth-child(2n) {
           justify-self: end;
         }
       }

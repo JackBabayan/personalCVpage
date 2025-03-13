@@ -30,23 +30,29 @@ const About = () => {
   }
 
   return (
-    <section className={styles.abourWrapper}>
-      <h3>
-        About Me
-      </h3>
-  
+    <section className={styles.aboutWrapper}>
+      <Box mb={9} textAlign={"center"}>
+        <h3>
+          About Me
+        </h3>
+      </Box>
+
       <Box mb={6}>
         <Text fontSize="lg" dangerouslySetInnerHTML={{ __html: aboutMe?.description || '' }} />
       </Box>
 
       <VStack spacing={6} paddingLeft={7} align="start">
         {aboutMe?.technicalSkills && aboutMe.technicalSkills.map((section, index) => (
-          <Flex key={index} gap={1}     flexWrap={"wrap"}>
-            <h5>{section.coreTechnologies?.name || section.styling?.name || section.tools?.name || section.ui?.name || section.methodologies?.name} : </h5>
+          <Flex key={index} gap={1} className={styles.technicalSkillsWrap}>
+            <h5>{section.coreTechnologies?.name || section.styling?.name || section.tools?.name || section.ui?.name || section.methodologies?.name}: </h5>
+            <Flex key={index} gap={1} flexWrap={"wrap"}>
               {(section.coreTechnologies?.technologies || section.styling?.technologies || section.tools?.technologies || section.ui?.technologies || section.methodologies?.technologies)?.map((tech, idx) => (
-                <Text key={idx}>{tech} {(section.coreTechnologies?.technologies || section.styling?.technologies || section.tools?.technologies || section.ui?.technologies || section.methodologies?.technologies).length -1 != idx && ","}</Text>
+                <>
+                  <Text as={"span"} key={idx}>{tech}</Text>
+                  {(section.coreTechnologies?.technologies || section.styling?.technologies || section.tools?.technologies || section.ui?.technologies || section.methodologies?.technologies).length - 1 != idx && ", "}
+                </>
               ))}
-           
+            </Flex>
           </Flex>
         ))}
       </VStack>

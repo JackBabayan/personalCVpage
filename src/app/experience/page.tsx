@@ -30,13 +30,15 @@ const Experience = () => {
       </Box>
     );
   }
-  
-  
+
+
   return (
     <section className={styles.contactWrapper}>
-      <h3>
-        Experience
-      </h3>
+      <Box mb={9} textAlign={"center"}>
+        <h3>
+          Experience
+        </h3>
+      </Box>
 
       {experiences.map((experience, index) => (
         <VStack key={index} align="start" spacing={4} mb={8}>
@@ -48,7 +50,7 @@ const Experience = () => {
           </Text>
           <Text>{experience.description}</Text>
           <Text fontWeight="bold" mt={2}>Projects:</Text>
-  
+
           <List spacing={2}>
             {experience.projects?.map((project, idx) => (
               <ListItem key={idx}><Link href={project?.url} target="_blank" >{project.name}</Link></ListItem>

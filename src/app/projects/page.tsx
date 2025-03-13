@@ -53,10 +53,10 @@ export default function PortfolioPage() {
       </Box>
 
       <Tabs
+        className={styles.tabsWrap}
         variant="soft-rounded"
         colorScheme="teal"
         onChange={setActiveTab}
-        className={styles.tabsWrap}
       >
         <TabList display="flex" justifyContent="center" flexWrap="wrap" className={styles.tabsTop}>
           <Tab fontSize="lg" fontWeight="medium">All</Tab>

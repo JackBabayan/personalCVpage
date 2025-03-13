@@ -1,9 +1,12 @@
-.formWrapper {
-  .formItem{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    font-size: 12px;
+.aboutWrapper {
+  .technicalSkillsWrap {
+    h5 {
+      font-weight: 600;
+    }
+
+    span {
+      text-decoration: underline;
+      font-weight: 500;
+    }
   }
 }
