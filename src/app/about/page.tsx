@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { Fragment, useEffect } from "react";
 import { Box, Heading, Text, Flex, ListItem, VStack, Spinner, Center } from "@chakra-ui/react";
 import useStore from '@/store/store';
 
@@ -41,7 +41,7 @@ const About = () => {
 
       <VStack spacing={6} paddingLeft={7} align="start">
         {aboutMe?.technicalSkills && aboutMe.technicalSkills.map((section, index) => (
-          <Flex key={index} gap={1}>
+          <Flex key={index} gap={1}     flexWrap={"wrap"}>
             <h5>{section.coreTechnologies?.name || section.styling?.name || section.tools?.name || section.ui?.name || section.methodologies?.name} : </h5>
               {(section.coreTechnologies?.technologies || section.styling?.technologies || section.tools?.technologies || section.ui?.technologies || section.methodologies?.technologies)?.map((tech, idx) => (
                 <Text key={idx}>{tech} {(section.coreTechnologies?.technologies || section.styling?.technologies || section.tools?.technologies || section.ui?.technologies || section.methodologies?.technologies).length -1 != idx && ","}</Text>
