@@ -2,6 +2,7 @@ import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
 import axios from 'axios';
 
+const isClient = typeof window !== 'undefined';
 
 interface AboutMe {
   description: string;
@@ -26,7 +27,7 @@ interface Project {
 
 interface PortfolioTab {
   tab: string;
-  date:string,
+  date: string,
   projects: Project[];
 }
 
@@ -35,7 +36,7 @@ interface Experience {
   location: string;
   dates: string;
   description: string;
-  projects: {name:string , url:string}[];
+  projects: { name: string, url: string }[];
 }
 
 interface StoreState {
@@ -45,10 +46,12 @@ interface StoreState {
   portfolio: PortfolioTab[];
   loading: boolean;
   error: string | null;
+  winWidth: number;
   fetchProjects: () => Promise<void>;
   fetchExperiences: () => Promise<void>;
   fetchAboutMe: () => Promise<void>;
   fetchPortfolio: () => Promise<void>;
+  setWindowWidth: (width: number) => void;
 }
 
 const useStore = create<StoreState>()(
@@ -59,6 +62,8 @@ const useStore = create<StoreState>()(
     portfolio: [],
     loading: false,
     error: null,
+    winWidth: isClient ? window.innerWidth : 0,
+    setWindowWidth: (width) => set({ winWidth: width }),
     fetchAboutMe: async () => {
       set({ loading: true, error: null });
       try {
@@ -102,7 +107,7 @@ const useStore = create<StoreState>()(
       set({ loading: true, error: null });
       try {
         const response = await axios.get<PortfolioTab[]>('/mocData/portfolio.json');
-        set({ portfolio: response.data , loading: false });
+        set({ portfolio: response.data, loading: false });
       } catch (error) {
         set({
           error: axios.isAxiosError(error) ? error.message : 'Failed to fetch portfolio',

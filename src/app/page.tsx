@@ -2,7 +2,7 @@
 
 import AboutMeInformation from "@/components/aboutMeInformation"
 import ProjectSection from "@/components/projectSection"
-import { Fragment , useEffect} from "react";
+import { Fragment, useEffect } from "react";
 import useStore from '@/store/store';
 import {
   Center, Text, Spinner
@@ -37,7 +37,7 @@ export default function Home() {
   return (
     <Fragment>
       <AboutMeInformation />
-      <ProjectSection projects={projects} loading={loading} error={error}/>
+      <ProjectSection projects={projects} loading={loading} error={error} />
     </Fragment>
   );
 }

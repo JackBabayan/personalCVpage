@@ -55,4 +55,15 @@
       right: -26%;
     }
   }
+
+  @media (max-width: 1024px) {
+    .imageWrap {
+      min-height: auto;
+
+      .textAbout {
+        max-width: 100%;
+        width: 100%;
+      }
+    }
+  }
 }

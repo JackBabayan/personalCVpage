@@ -2,15 +2,19 @@
 
 import { useEffect, useRef } from 'react';
 import Link from "next/link";
-import { Text, Highlight, Box, SimpleGrid, Grid, GridItem } from "@chakra-ui/react";
+import { Text, Highlight, Box, Grid, GridItem } from "@chakra-ui/react";
 import Image from 'next/image';
 import gsap from 'gsap';
+import useStore from '@/store/store';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 import styles from "./style.module.scss";
 
 export default function AboutMeInformation() {
+
+    const { winWidth } = useStore();
+
     const textRef = useRef<HTMLDivElement | null>(null);
     const linkRef = useRef<HTMLAnchorElement | null>(null);
     const container = useRef<HTMLDivElement | null>(null);
@@ -64,7 +68,7 @@ export default function AboutMeInformation() {
     return (
         <section className={styles.wrapper} ref={container}>
             <Grid
-                templateColumns={{ base: "1fr", md: "repeat(2, 1fr)", lg: "repeat(3, 1fr)" }} gap={{ base:5, md: 9, lg: 14 }} >
+                templateColumns={{ base: "1fr", md: "repeat(2, 1fr)", lg: "repeat(3, 1fr)" }} gap={{ base: 5, md: 9, lg: 14 }} >
                 <GridItem colSpan={{ base: 1, md: 2, lg: 1 }}>
                     <h3>
                         Hey there, I’m
@@ -118,16 +122,18 @@ export default function AboutMeInformation() {
                             {splitText("Download CV")}
                         </Link>
                     </div>
-
-                    <Image
-                        width={400}
-                        height={600}
-                        style={{ objectFit: "cover" }}
-                        src={'/images/sar2.png'}
-                        alt='Saro Babayan'
-                        quality={100}
-                        unoptimized
-                    />
+                    {
+                        winWidth > 865 &&
+                        <Image
+                            width={400}
+                            height={600}
+                            style={{ objectFit: "cover" }}
+                            src={'/images/sar2.png'}
+                            alt='Saro Babayan'
+                            quality={100}
+                            unoptimized
+                        />
+                    }
                 </div>
             </Box>
         </section >

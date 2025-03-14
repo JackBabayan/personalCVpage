@@ -1,17 +1,19 @@
+/* Добавляем медиа-запросы для адаптива */
 .footer {
-  padding: var(--inboxPaddingLg) var(--globalWrapPadding);
+  padding: var(--globalSectionsPadding) var(--globalWrapPadding) var(--inboxPaddingLg);
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap:var(--inboxPaddingLg);
+  gap: var(--inboxPaddingLg);
 
   .footerTop {
     width: 100%;
     max-width: var(--maxWidth);
+
     .contactWithMe {
       font-size: var(--pL);
       font-weight: 700;
-      background: radial-gradient(closest-side at 30% 90%  , #b5b0b0  ,#000, #666 , #b5b0b0,#000);
+      background: radial-gradient(closest-side at 30% 90%, #b5b0b0, #000, #666, #b5b0b0, #000);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-position: 0% 200%;
@@ -25,7 +27,6 @@
     }
 
     .footerSocialIconWrap {
-
       .footerSocialLink {
         opacity: 0.5;
         transition: all var(--trTime1) ease-in-out;
@@ -43,19 +44,21 @@
       line-height: 1;
       font-weight: 700;
       position: relative;
-      .moveIcon{
+
+      .moveIcon {
         position: absolute;
         bottom: 100%;
         right: 0;
-        svg{
+
+        svg {
           overflow: visible;
           width: 100px;
           fill: black;
-          transform-origin: 0px 0px; 
+          transform-origin: 0px 0px;
         }
       }
 
-      >svg {
+      > svg {
         width: 20px;
       }
     }
@@ -65,12 +68,59 @@
     font-size: var(--pS);
     width: 100%;
     max-width: var(--maxWidth);
+
     .footerNavBar {
+      display: flex;
+      gap: 20px;
+
       a {
         font-size: var(--pM);
         color: var(--colorBlack);
       }
     }
   }
+}
 
+/* Адаптив для планшетов */
+@media (max-width: 1024px) {
+  .footer {
+    .footerTop {
+      flex-direction: column;
+      gap: 20px;
+
+
+      .footerSocialIconWrap {
+        gap: 15px;
+      }
+    }
+
+    .footerBottom {
+      flex-direction: column;
+      text-align: center;
+      gap: 15px;
+
+      .footerNavBar {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+
+    .footerTop {
+      gap: 15px;
+    }
+
+    .footerBottom {
+      gap: 10px;
+
+      .footerNavBar {
+        flex-direction: column;
+        gap: 5px;
+      }
+    }
+  }
 }

@@ -1,4 +1,7 @@
 .wrapper {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
 
     h4 {
         margin-bottom: var(--inboxPaddingSm);
@@ -7,13 +10,14 @@
     .text {
         font-size: var(--pL);
         margin-bottom: var(--inboxPaddingMd);
-        span{
+
+        span {
             color: var(--chakra-colors-teal-300);
             text-decoration: underline;
             cursor: pointer;
         }
     }
-    
+
     a {
         font-weight: 500;
         text-decoration: underline;
@@ -26,10 +30,34 @@
             height: var(--h5);
         }
     }
-    
+
     .wrapperTechnology {
         text-decoration: overline;
         font-size: var(--pM);
         margin-bottom: var(--inboxPaddingSm);
+    }
+
+    /* Адаптивность */
+    @media (max-width: 1024px) {
+        .wrapper {
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .text {
+            margin-bottom: var(--inboxPaddingSm);
+        }
+    }
+
+    @media (max-width: 600px) {
+        .wrapper {
+            gap: 15px;
+        }
+
+
+        Image {
+            width: 100%;
+            height: auto;
+        }
     }
 }
