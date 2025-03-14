@@ -2,15 +2,6 @@
   .top {
     text-align: center;
     margin: 0 auto var(--globalSectionsPadding);
-
-    h3 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    p {
-      font-size: 1.2rem;
-    }
   }
 
   .tabsWrap {
@@ -21,19 +12,10 @@
         padding-top: var(--chakra-space-1);
         padding-bottom: var(--chakra-space-1);
       }
-
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
     }
 
     .greedWrap {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-
-      > div {
+      >div {
         justify-self: start;
 
         &:nth-child(2n) {
@@ -42,12 +24,7 @@
       }
     }
   }
-
-  /* Адаптивность */
   @media (max-width: 1024px) {
-    .top {
-      max-width: 90%;
-    }
 
     .tabsWrap {
       .tabsTop {
@@ -61,25 +38,7 @@
   }
 
   @media (max-width: 768px) {
-    .top {
-      max-width: 100%;
-    }
 
-    .tabsWrap {
-      .tabsTop {
-        gap: 10px;
-        button {
-          min-width: 150px;
-        }
-      }
-
-      .greedWrap {
-        grid-template-columns: 1fr;
-      }
-    }
-  }
-
-  @media (max-width: 480px) {
 
     .tabsWrap {
       .tabsTop {

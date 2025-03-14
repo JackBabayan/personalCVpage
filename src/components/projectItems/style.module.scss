@@ -1,7 +1,6 @@
 .wrapper {
     display: flex;
     gap: 30px;
-    flex-wrap: wrap;
 
     h4 {
         margin-bottom: var(--inboxPaddingSm);
@@ -24,7 +23,7 @@
         display: flex;
         align-items: center;
         gap: 5px;
-        
+
         svg {
             width: var(--h5);
             height: var(--h5);
@@ -39,10 +38,9 @@
 
     /* Адаптивность */
     @media (max-width: 1024px) {
-        .wrapper {
-            flex-direction: column;
-            gap: 20px;
-        }
+
+        flex-direction: column;
+        gap: 20px;
 
         .text {
             margin-bottom: var(--inboxPaddingSm);
@@ -50,10 +48,8 @@
     }
 
     @media (max-width: 600px) {
-        .wrapper {
-            gap: 15px;
-        }
 
+        gap: 15px;
 
         Image {
             width: 100%;
