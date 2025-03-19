@@ -1,14 +1,13 @@
 .chatContainer {
   .chatMessages {
+    color: var(--colorBlack);
 
     .userMessage {
       text-align: right;
-      color: blue;
     }
 
     .aiMessage {
       text-align: left;
-      color: green;
     }
   }
 
