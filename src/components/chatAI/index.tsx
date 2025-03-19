@@ -69,7 +69,7 @@ export default function ChatAI() {
             type="text"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            placeholder="Напиши что-то..."
+            placeholder="Your question..."
             disabled={loading}
             focusBorderColor="teal.500"
             autoFocus
