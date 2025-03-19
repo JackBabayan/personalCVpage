@@ -5,6 +5,9 @@ import {
   Flex, Button, Input, Box, Spinner
 } from "@chakra-ui/react";
 
+import { SendIcon } from "@/styles/icon";
+
+
 import styles from "./styles.module.scss";
 
 export default function ChatAI() {
@@ -24,7 +27,7 @@ export default function ChatAI() {
     setLoading(true);
 
     try {
-      const res = await axios.post('/api/chat', { message }); 
+      const res = await axios.post('/api/chat', { message });
       const aiMessage = { role: 'assistant', content: res.data.reply };
       setChatHistory([...updatedChat, aiMessage]);
     } catch (error) {
@@ -35,12 +38,25 @@ export default function ChatAI() {
   };
 
   return (
-    <Box className={styles.chatContainer}>
-      <Box className={styles.chatMessages}>
+    <Box
+      className={styles.chatContainer}
+      borderWidth="1px"
+      borderRadius="lg"
+      overflow="hidden"
+      minHeight="500px"
+      padding={3}
+      display="flex"
+      flexDirection="column"
+      justifyContent="flex-end"
+    >
+      <Box className={styles.chatMessages} flexGrow={1} overflowY="auto" mb={4}>
         {chatHistory.map((msg, index) => (
           <Box
             key={index}
             className={msg.role === 'user' ? styles.userMessage : styles.aiMessage}
+            padding={2}
+            borderRadius="md"
+            mb={2}
           >
             {msg.content}
           </Box>
@@ -55,12 +71,15 @@ export default function ChatAI() {
             onChange={(e) => setMessage(e.target.value)}
             placeholder="Напиши что-то..."
             disabled={loading}
+            focusBorderColor="teal.500"
+            autoFocus
           />
           <Button type="submit" colorScheme="teal" isDisabled={loading}>
-            {loading ? <Spinner size="sm" /> : "Отправить"}
+            {loading ? <Spinner size="sm" /> : <SendIcon />}
           </Button>
         </Flex>
       </form>
     </Box>
+
   );
 }

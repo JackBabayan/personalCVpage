@@ -13,4 +13,10 @@
   }
 
   .chatForm {}
+
+  button{
+    svg{
+      fill: var(--colorWhite);
+    }
+  }
 }

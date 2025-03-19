@@ -36,7 +36,7 @@ const About = () => {
         About Me
       </Heading>
 
-      <Box mb={9}>
+      <Box mb={20}>
 
         <VStack spacing={6} align="start">
           <Text fontSize="lg" dangerouslySetInnerHTML={{ __html: aboutMe?.description || '' }} />
@@ -58,6 +58,14 @@ const About = () => {
       </Box>
 
       <Box>
+        <Box mb={9} maxWidth="500px" mx="auto" textAlign="center">
+          <Heading as="h3" size="md" mb={4}>
+            AI Chat About Me
+          </Heading>
+          <Text fontSize="lg">
+            If you have any questions, you can ask in the AI chat, and it will provide answers about my profession, position, projects, and company.
+          </Text>
+        </Box>
         <ChatAI />
       </Box>
     </section>
