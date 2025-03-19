@@ -6,9 +6,33 @@ import { ThemeProvider } from "next-themes"
 const theme = extendTheme({
   fonts: {
     heading: "Poppins, sans-serif",
-    body: "Poppins, sans-serif", 
+    body: "Poppins, sans-serif",
   },
   components: {
+    Heading: {
+      baseStyle: {
+        fontWeight: "bold",
+        fontFamily: "Poppins , sans-serif",
+        lineHeight: "var(--lineHeightS)",
+      },
+      sizes: {
+        xl: {
+          fontSize: "var(--h1)",
+        },
+        lg: {
+          fontSize: "var(--h2)",
+          fontWeight: 500,
+          marginBottom: "var(--inboxPaddingMd)",
+        },
+        md: {
+          fontSize: "var(--h3)",
+          fontWeight: 500,
+        },
+        sm: {
+          fontSize: "var(--h4)",
+        },
+      },
+    },
     Button: {
       baseStyle: {
         fontWeight: "500",
@@ -43,22 +67,22 @@ const theme = extendTheme({
     },
     Textarea: {
       baseStyle: {
-          border: "2px solid",
-          borderColor: "gray.300",
-          _hover: {
-            borderColor: "black.700",
-            boxShadow: "0 0 0 2px rgb(0 0 0 / 13%)",
-          },
-          _focus: {
-            borderColor: "black.700",
-            boxShadow: "0 0 0 2px rgb(0 0 0 / 13%)",
-          },
-          _focusVisible: {
-            borderColor: "black.700",
-            boxShadow: "0 0 0 2px rgb(0 0 0 / 13%)",
-          },
+        border: "2px solid",
+        borderColor: "gray.300",
+        _hover: {
+          borderColor: "black.700",
+          boxShadow: "0 0 0 2px rgb(0 0 0 / 13%)",
+        },
+        _focus: {
+          borderColor: "black.700",
+          boxShadow: "0 0 0 2px rgb(0 0 0 / 13%)",
+        },
+        _focusVisible: {
+          borderColor: "black.700",
+          boxShadow: "0 0 0 2px rgb(0 0 0 / 13%)",
+        },
       },
-  }
+    }
   },
 
 }) // Кастомная тема, можно добавить стили

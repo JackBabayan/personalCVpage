@@ -8,7 +8,7 @@ import { ArrowLeftTopIcon } from "@/styles/icon";
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-import styles from './style.module.scss'
+import styles from './styles.module.scss'
 // Инициализация ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
 
