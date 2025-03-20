@@ -8,11 +8,20 @@ import useStore from '@/store/store';
 import styles from "./styles.module.scss"
 
 const About = () => {
-  const { aboutMe, loading, error, fetchAboutMe } = useStore();
+  const { aboutMe, loading, error,
+    fetchProjects,
+    fetchExperiences,
+    fetchAboutMe,
+    fetchPortfolio
+  } = useStore();
 
   useEffect(() => {
+    fetchExperiences();
+    fetchPortfolio();
+    fetchPortfolio();
     fetchAboutMe();
-  }, [fetchAboutMe]);
+    fetchProjects()
+  }, [fetchProjects,fetchExperiences,fetchAboutMe,fetchPortfolio]);
 
   if (loading) {
     return (

@@ -1,77 +1,40 @@
 import { NextResponse } from "next/server";
-import axios from "axios";
-import fs from 'fs';
-import path from 'path';
+import Together from "together-ai";
+
+const together = new Together({
+    apiKey: process.env.TOGETHER_AI_API_KEY,
+});
 
 export async function POST(req) {
-
     try {
-        const { message } = await req.json();
+        const { message, context } = await req.json(); // Получаем контекст из запроса
 
-        // Путь к файлам данных
-        const aboutMeFile = path.join(process.cwd(), "mockData", "aboutMe.json");
-        const experiencesFile = path.join(process.cwd(), "mockData", "experiences.json");
-        const portfolioFile = path.join(process.cwd(), "mockData", "portfolio.json");
-
-        // Чтение данных из файлов
-        function readJsonFile(filePath) {
-            const fileData = fs.readFileSync(filePath, "utf8");
-            return JSON.parse(fileData);
+        if (!context) {
+            return NextResponse.json({ error: "Контекст не был передан." }, { status: 400 });
         }
 
+        // Формируем запрос для создания чата
+        const response = await together.chat.completions.create({
+            messages: [
+                { role: 'system', content: 'You are an AI assistant that helps users find the answers they are interested in on a CV, and will answer questions related to it and more.' },
+                { role: 'user', content: context }, // Передаем контекст, который приходит из компонента
+                { role: "user", content: message }, // Передаем сообщение пользователя
+            ],
+            model: "meta-llama/Llama-3.3-70B-Instruct-Turbo", // Используем модель
+            max_tokens: 150, // Максимальное количество токенов
+            temperature: 0.7, // Контроль случайности
+            top_p: 0.7,
+            top_k: 50,
+            repetition_penalty: 1,
+            stop: ["<|eot_id|>", "<|eom_id|>"], // Стоп-символы
+            stream: false, // Выключаем стриминг для простоты
+        });
 
-        // Формируем контекст
-        const context = `
-    Here is some context to answer the user's questions based on my resume:
+        const content = response.choices[0]?.message?.content || "No response";
 
-    About Me: 
-    ${aboutMe.description}
-    ${aboutMe.ending}
-
-    Skills and technologies:
-    ${aboutMe.technicalSkills.map(skill => `${skill.name}: ${skill.technologies.join(", ")}`).join("\n")}
-
-    Work Experience:
-    ${experiences.map(exp => `
-    Position: ${exp.position}
-    Location: ${exp.location}
-    Dates: ${exp.dates}
-    Description: ${exp.description}
-    Projects: ${exp.projects.map(p => `- ${p.name} (${p.url})`).join("\n")}
-    `).join("\n")}
-
-    Portfolio:
-    ${portfolio.map(port => `
-    Project: ${port.name}
-    Description: ${port.description}
-    URL: ${port.url}
-    Technologies: ${port.technologies.join(", ")}
-    `).join("\n")}
-    `;
-
-
-        const response = await axios.post(
-            "https://api.openai.com/v1/chat/completions",
-            {
-                model: "gpt-3.5-turbo", // или gpt-4
-                messages: [
-                    { role: "system", content: "You are a chatbot trained to answer questions based on a developer's resume and portfolio." },
-                    { role: "user", content: message },
-                    { role: "system", content: context }
-                ],
-            },
-            {
-                headers: {
-                    Authorization: `Bearer ${process.env.NEXT_PUBLIC_OPENAI_API_KEY || process.env.OPENAI_API_KEY}`,
-                    "Content-Type": "application/json",
-                },
-            }
-        );
-
-        return NextResponse.json({ reply: response.data.choices[0].message.content });
+        return NextResponse.json({ reply: content });
     } catch (error) {
-        console.error('OpenAI request failed:', error.response?.data || error.message);
+        console.error('AI request failed:', error.response?.data || error.message);
         return NextResponse.json({ error: "Ошибка обработки запроса" }, { status: 500 });
     }
-
 }

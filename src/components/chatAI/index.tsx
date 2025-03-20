@@ -1,19 +1,52 @@
 "use client";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
+import useStore from '@/store/store';
 import {
   Flex, Button, Input, Box, Spinner
 } from "@chakra-ui/react";
-
 import { SendIcon } from "@/styles/icon";
-
-
 import styles from "./styles.module.scss";
 
 export default function ChatAI() {
   const [message, setMessage] = useState('');
   const [chatHistory, setChatHistory] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loadingChat, setLoadingChat] = useState(false);
+
+
+  const { aboutMe, experiences, portfolio, projects, loading } = useStore();
+
+  const buildContext = () => {
+    if (!aboutMe || !experiences || !portfolio || !projects) {
+      return "Контекст еще не загружен.";
+    }
+
+    return `
+      About Me:
+      ${aboutMe.description}
+      ${aboutMe.ending}
+
+      Work Experience:
+      ${experiences.map(exp => `
+      Position: ${exp.position}
+      Location: ${exp.location}
+      Dates: ${exp.dates}
+      Description: ${exp.description}
+      Projects: ${exp.projects.map(p => `${p.name} (${p.url})`).join("\n")}
+      `).join("\n")}
+
+      Portfolio:
+      ${portfolio.map(tab => `
+      Tab: ${tab.tab} (${tab.date})
+      Projects: ${tab.projects.map(p => `
+      - Project: ${p.name}
+      Description: ${p.description}
+      URL: ${p.url}
+      Technologies: ${p.technologies.join(", ")}
+      Image: ${p.image}`).join("\n")}
+      `).join("\n")}
+    `;
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -22,28 +55,36 @@ export default function ChatAI() {
     const newMessage = { role: 'user', content: message };
     const updatedChat = [...chatHistory, newMessage];
 
+    
     setChatHistory(updatedChat);
     setMessage('');
-    setLoading(true);
-
+    setLoadingChat(true);
+    
     try {
-      const res = await axios.post('/api/chat', { message });
+      const context = buildContext();
+      const res = await axios.post('/api/chat', { message, context });
       const aiMessage = { role: 'assistant', content: res.data.reply };
       setChatHistory([...updatedChat, aiMessage]);
     } catch (error) {
       console.error('Ошибка запроса:', error);
     } finally {
-      setLoading(false);
+      setLoadingChat(false);
     }
   };
+
+  useEffect(() => {
+    if (loading) {
+      setLoadingChat(true);
+    } else {
+      setLoadingChat(false);
+    }
+  }, [loading]);
 
   return (
     <Box
       className={styles.chatContainer}
       borderWidth="1px"
       borderRadius="lg"
-      overflow="hidden"
-      minHeight="500px"
       padding={3}
       display="flex"
       flexDirection="column"
@@ -70,16 +111,13 @@ export default function ChatAI() {
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             placeholder="Your question..."
-            disabled={loading}
-            focusBorderColor="teal.500"
-            autoFocus
+            disabled={loadingChat}
           />
-          <Button type="submit" colorScheme="teal" isDisabled={loading}>
-            {loading ? <Spinner size="sm" /> : <SendIcon />}
+          <Button type="submit" colorScheme="teal" isDisabled={loadingChat}>
+            {loadingChat ? <Spinner size="sm" /> : <SendIcon />}
           </Button>
         </Flex>
       </form>
     </Box>
-
   );
 }
