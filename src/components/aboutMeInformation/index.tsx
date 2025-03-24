@@ -114,7 +114,7 @@ export default function AboutMeInformation() {
                 <h1>Saro Babayan</h1>
                 <div className={styles.imageWrap}>
                     <div className={styles.textAbout} ref={textRef}>
-                        {splitText("Hey! If you're curious about my background—here’s a bit about my education. I studied Economic-Mathematical methods, Accounting, Analysis, and Audit at the Plekhanov Russian University of Economics (2013 – 2017) in Yerevan, Armenia. This gave me strong analytical skills, which later helped in my development career.")}<br />
+                        {splitText("If you're curious about my background—here’s a bit about my education. I studied Economic-Mathematical methods, Accounting, Analysis, and Audit at the Plekhanov Russian University of Economics (2013 – 2017) in Yerevan, Armenia. This gave me strong analytical skills, which later helped in my development career.")}<br />
                         {splitText("I initially started in finance, but quickly realized that building digital products was my true passion. So, I switched to front-end development, and it’s been the best decision ever!")}<br />
                         {splitText("Want to dive deeper into my experience? Check out my full resume : ")}
 
