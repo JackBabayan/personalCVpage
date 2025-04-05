@@ -7,6 +7,8 @@ import Image from 'next/image';
 import gsap from 'gsap';
 import useStore from '@/store/store';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import axios from 'axios';
+
 
 gsap.registerPlugin(ScrollTrigger);
 import styles from "./style.module.scss";
@@ -25,6 +27,100 @@ export default function AboutMeInformation() {
                 {letter}
             </span>
         ));
+
+
+
+    // const fetchData = async()=>{
+    //     try{
+    //         const res = await axios.get("https:/?google.com" , {params:{title:"123"}})
+    //         return res.data 
+
+    //     }catch(error){
+    //         console.error(error)
+    //     }
+    // } 
+
+    // fetchData().then(res=>console.log(res))
+
+    // const fetchData = () => {
+    //     return new Promise((resolve, reject) => {
+    //        axios.get("https://google.com/datastr" , {params:{title:"123"}})
+    //        .then(res=>{
+    //         resolve(res)
+    //        })
+    //        .catch(rej=>{
+    //         reject(rej)
+    //        })
+    //     })
+    // }
+
+    // fetchData().then(data=>console.log("data",data)).catch(error=>console.log(error))
+
+
+    // const fetchData = async () => {
+    //     try {
+    //         const res = await fetch("https://google.com/datastr",
+    //             {
+    //                 method: "POST",
+    //                 headers: {
+    //                     "Content-Type": "application/json"
+    //                 },
+    //                 body: JSON.stringify({ title: "123" })
+    //             })
+    //         if (!res.ok) {
+    //             throw new Error(`owibka servera ${res.status}`)
+    //         }
+    //         const data = await res.json()
+    //         return data
+    //     }
+    //     catch (error) {
+    //         console.error(error)
+    //     }
+    // }
+
+    // fetchData().then(data => console.log(data))
+
+    // Promise.all(), Promise.race(), и Promise.allSettled()
+
+
+    // function isPolendrom(str){
+    //    let text = str.toLowerCase().replace('/\s+/gz',"")
+    //    let reverseText = text.split('').reverse().join('')
+    //    if (text == reverseText){
+    //     console.log("ok")
+    // }
+    // else{
+    //        console.log("neok")
+    //    }
+    // }
+
+    // isPolendrom("А поза упала на лапу Азора")
+
+    
+    // const fetchData = ()=>{
+        //     return new Promise((resolve, reject)=>{
+            //         axios.post("https:/?google.com" , {params:{title:"123"}})
+            //         .then(res=>resolve(res))
+            //         .catch(rej =>reject(rej))
+            //     })
+            // }
+            
+            // fetchData().then((data)=>{console.log(data) ; return data}).then(res=>{console.log(res)}).catch(rej=>console.log(rej))
+            
+            // function merge(nums1, m, nums2, n) {
+            //    nums1.splice(0 , m)
+            //    return  nums1.splice(0 , m).concat(nums2).sort((a,b)=>a - b)
+            //   }
+              
+            
+            // function merge(nums1, m, nums2, n) {
+                
+            //     nums1 = nums1.slice(0 , m).concat(nums2);
+                
+            //     return nums1.sort((a, b) => a - b);
+            // };
+
+            // console.log(merge([46,55,88,0,0,0,0], 3 ,[18,29,80,90], 4)) 
 
     useEffect(() => {
         if (!container.current) return;

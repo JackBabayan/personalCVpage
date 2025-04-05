@@ -4,6 +4,16 @@ import axios from 'axios';
 
 const isClient = typeof window !== 'undefined';
 
+interface BIO {
+  title: string,
+  description: string,
+  content: {
+      title: string,
+      description: string,
+      images:string[]
+    }[]
+}
+
 interface AboutMe {
   description: string;
   ending: string;
@@ -44,6 +54,7 @@ interface StoreState {
   projects: Project[];
   experiences: Experience[];
   portfolio: PortfolioTab[];
+  bio: BIO | null,
   loading: boolean;
   error: string | null;
   winWidth: number;
@@ -51,6 +62,7 @@ interface StoreState {
   fetchExperiences: () => Promise<void>;
   fetchAboutMe: () => Promise<void>;
   fetchPortfolio: () => Promise<void>;
+  fetchBio: () => Promise<void>;
   setWindowWidth: (width: number) => void;
 }
 
@@ -60,6 +72,7 @@ const useStore = create<StoreState>()(
     projects: [],
     experiences: [],
     portfolio: [],
+    bio: null,
     loading: false,
     error: null,
     winWidth: isClient ? window.innerWidth : 0,
@@ -111,6 +124,19 @@ const useStore = create<StoreState>()(
       } catch (error) {
         set({
           error: axios.isAxiosError(error) ? error.message : 'Failed to fetch portfolio',
+          loading: false,
+        });
+      }
+    },
+
+    fetchBio: async () => {
+      set({ loading: true, error: null });
+      try {
+        const response = await axios.get<BIO>('/mocData/bio.json');
+        set({ bio: response.data, loading: false });
+      } catch (error) {
+        set({
+          error: axios.isAxiosError(error) ? error.message : 'Failed to fetch bio',
           loading: false,
         });
       }

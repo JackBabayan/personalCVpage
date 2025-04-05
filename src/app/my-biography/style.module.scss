@@ -1,5 +1,27 @@
-.pokemonWrapper {
-  ul{
-    padding-left: 20px;
+.bioWrapper {
+  padding: 20px;
+
+  .sliderWrapper {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    margin-top: 20px;
   }
+  
+  .page {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    transition: transform 1s ease-in-out;
+  }
+  
+  .image {
+    max-width: 100%;
+    max-height: 400px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
 }

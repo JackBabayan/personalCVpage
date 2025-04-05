@@ -1,74 +1,55 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
-import { useAuth } from '@/context/AuthContext';
-import Link from "next/link";
-
-import { Box, Input, Button, List, ListItem, Container, Spinner, Center } from "@chakra-ui/react";
-
+import { useEffect } from "react";
+import { Box, Flex, Spinner, Text, VStack, Center } from "@chakra-ui/react";
+import useStore from '@/store/store';
+import BookSlider from '@/components/BookSlider';
 import styles from "./style.module.scss";
 
-export default function MyBiography() {
-  const [data, setData] = useState([]);
-  const [search, setSearch] = useState("");
-  const [offset, setOffset] = useState(0);
-  const [loading, setLoading] = useState(false);
-  const [hasMore, setHasMore] = useState(true);
+const BioPage = () => {
+  const { bio, loading, error, fetchBio } = useStore();
 
   useEffect(() => {
-    setLoading(true);
-  
-    fetch(`https://pokeapi.co/api/v2/pokemon?limit=20&offset=${offset}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setData((prevData) => {
-          const newData = data.results.filter(
-            (item) => !prevData.some((existing) => existing.name === item.name)
-          );
-          return [...prevData, ...newData];
-        });
-        setHasMore(data.results.length > 0);
-        setLoading(false);
-      })
-      .catch(() => setLoading(false));
-  }, [offset]);
-  
+    fetchBio();
+  }, [fetchBio]);
 
-  const filteredData = data.filter((item) =>
-    item.name.toLowerCase().includes(search.toLowerCase())
-  );
+  if (loading) {
+    return (
+      <Center height="100vh">
+        <Spinner size="xl" />
+      </Center>
+    );
+  }
 
+  if (error) {
+    return (
+      <Box color="red.500" textAlign="center">
+        <Text>{error}</Text>
+      </Box>
+    );
+  }
   return (
-    <Container maxW="80vw" mt="20px" mb="20px" className={styles.pokemonWrapper}>
-      <Box as="section" mb="20px">
-        <Input
-          placeholder="Search Pokemon"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
+    <section className={styles.bioWrapper}>
+      <h3>
+        {bio?.title}
+      </h3>
+      <Box mt={4} mb={20}>
+        <Text fontSize="lg">{bio?.description}</Text>
       </Box>
 
-      <Box as="section" mb="20px">
-        <List spacing={3} styleType="decimal">
-          {filteredData.map((item, ind) => (
-            <ListItem key={ind}>
-              <Link href={`/pokemon-info/${item.name}`}>{item.name}</Link>
-            </ListItem>
-          ))}
-        </List>
-      </Box>
-
-      {loading && <Center bg="bg.emphasized" h="100vh" w="100%"><Spinner size="lg" /></Center>}
-
-      {hasMore && !loading && (
-        <Button
-          onClick={() => setOffset((prevOffset) => prevOffset + 20)}
-          colorScheme="green"
-          variant="outline">
-          Load More
-        </Button>
-      )}
-    </Container>
+      <VStack spacing={10} align="start">
+        {bio?.content?.map((item, index) => (
+          <Flex key={index} gap={16}>
+            <div>
+              <h4>{item.title}</h4>
+              <Text fontSize="md" mt={2}>{item.description}</Text>
+            </div>
+            <BookSlider images={item.images} />
+          </Flex>
+        ))}
+      </VStack>
+    </section>
   );
-}
+};
+
+export default BioPage;

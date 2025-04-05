@@ -1,0 +1,21 @@
+{
+  "title":"My Biography",
+  "description": "My name is Babayan Saro, and I’m a Frontend Developer with over 8 years of experience building modern, responsive, and high-quality web applications. I specialize in React.js and work extensively with technologies like TypeScript, Next.js, Zustand, Tailwind CSS, and advanced animations using GSAP.I began my career as a layout developer at ZOOM GRAPHICS, where I gained valuable experience building adaptive interfaces. Two years later, I joined Concept Studio as a Middle React Developer, where I worked on complex and highly interactive frontend solutions. After that, I moved on to Notamedia as a Senior Developer, where I built services for a major bank, worked on refactoring and architecture, conducted code reviews, and mentored junior developers.I’m passionate about clean code, thoughtful development, and continuous learning. My approach is to understand the core of the problem, find the most efficient solution, and polish it to a high standard. I’m currently looking for new opportunities to join a strong team and build products that make an impact on millions of users.",
+  "content":[
+    {
+      "title":"My dog - Archibald",
+      "description": "Beyond coding, I share my life with Archibald — a two-year-old Weimaraner. He’s energetic, smart, and always keeps me on my toes. Whether we're going for long walks, hiking in nature, or just playing around, he’s a big part of my daily routine and a constant reminder to take breaks and enjoy the moment. Having him around adds a lot of joy and balance to my life, especially when working remotely.",
+      "images": ["/images/photo_1_dog.jpg" , "/images/photo_2_dog.jpg","/images/photo_3_dog.jpg" , "/images/photo_4_dog.jpg" ]
+    },
+    {
+      "title":"Woodworking",
+      "description": "In my free time, I enjoy woodworking — especially designing and building furniture by hand. There’s something deeply satisfying about working with natural materials and creating something tangible from scratch. It’s a meditative process that contrasts nicely with the digital nature of frontend development and helps me stay creative in new ways. Whether it’s a custom shelf, a table, or a small piece for home, every project is a blend of craftsmanship and design.",
+      "images": ["/images/photo_1_wood.jpg" , "/images/photo_2_wood.jpg","/images/photo_3_wood.jpg" , "/images/photo_4_wood.jpg","/images/photo_5_wood.jpg","/images/photo_6_wood.jpg" , "/images/photo_7_wood.jpg" ]
+    },
+    {
+      "title":"Anime",
+      "description": "I'm also a big fan of anime — it’s a huge source of inspiration for me. I love the deep stories, expressive animation, and unique worlds. Classics like Naruto, Bleach, Samurai Champloo, and Berserk have had a big impact on how I view storytelling, character development, and even aesthetics in design. Anime helps me recharge creatively and brings a lot of joy outside of work.",
+      "images": ["/images/anime1.jpeg" , "/images/anime2.jpeg" , "/images/anime3.jpeg" , "/images/anime4.jpeg" ]
+    }
+  ]
+}

@@ -56,7 +56,7 @@ export default function AuthPage() {
   return (
     <section className={styles.contactWrapper}>
       <Flex justifyContent={"center"} mb={10}>
-        <h3 ref={titleRef}>Contact me</h3>
+        <h3 ref={titleRef}>Login</h3>
       </Flex>
       <Box className={styles.container}>
         <Box maxW="md" mx="auto" p={6} borderWidth={1} borderRadius="lg" boxShadow="md" ref={contRef}>
