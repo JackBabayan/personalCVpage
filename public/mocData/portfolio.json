@@ -246,5 +246,93 @@
         ]
       }
     ]
+  },
+  {
+    "tab": "Pet projects",
+    "date":"Jan 2025 - Now",
+    "projects": [
+      {
+        "id": 1,
+        "description": "This is my personal portfolio website where I showcase my professional experience, selected projects, and skills as a Frontend Developer. The site is built using Next.js (App Router) and optimized for performance and accessibility. It includes interactive UI elements, clean animations, and responsive design to ensure a seamless experience across all devices.",
+        "name": "Saro Babayan — Personal CV Page",
+        "url": "https://saro-babayan-personal-cv-page.vercel.app/",
+        "image": "/images/CVpage.png",
+        "technologies": [
+          "React",
+          "Redux Toolkit",
+          "Type Script",
+          "Next",
+          "Zustand",
+          "Open AI chat",
+          "React Query",
+          "WebSocket",
+          "Vite",
+          "Styled Components",
+          "Gsap",
+          "Chakra UI",
+          "SASS",
+          "Figma",
+          "Eslint"
+        ]
+      },
+      {
+        "id": 2,
+        "description": "A minimalistic and intuitive to-do list application that helps users manage their daily tasks efficiently. Built with modern frontend technologies, it focuses on clean UI, responsive design, and smooth user interactions.",
+        "name": "To-Do List — Simple and Clean Task Management App",
+        "url": "https://yoldi-profile.vercel.app/all-accounts",
+        "image": "/images/ToDoList.png",
+        "technologies": [
+          "React",
+          "Redux Toolkit",
+          "Type Script",
+          "Next",
+          "Vite",
+          "Styled Components",
+          "Ant Design",
+          "SASS",
+          "Figma",
+          "Eslint"
+        ]
+      },
+      {
+        "id": 3,
+        "description": "Yoldi Profile is a modern web application that features a full authentication system, allowing users to sign up, log in, and access a protected profile page. User data is fetched from an API and kept fresh using SWR (stale-while-revalidate) for seamless UX and performance.",
+        "name": "Yoldi Profile — User Profile Page with Authentication",
+        "url": "https://yoldi-profile.vercel.app/all-accounts",
+        "image": "/images/YoldiProfile.png",
+        "technologies": [
+          "React",
+          "Zustand",
+          "Next",
+          "swr",
+          "Type Script",
+          "Vite",
+          "Styled Components",
+          "SASS",
+          "Figma",
+          "Eslint"
+        ]
+      },
+      {
+        "id": 4,
+        "description": "Match Tracker is a modern web application that allows users to view a list of matches and track their real-time updates. The interface is simple and intuitive, while the match data is updated live using WebSocket technology.",
+        "name": "Match Tracker — Real-Time Match Monitoring Web App",
+        "url": "https://match-tracker-kappa.vercel.app/",
+        "image": "/images/matchTracker.png",
+        "technologies": [
+          "React Native",
+          "Java Script",
+          "Type Script",
+          "Next",
+          "React Query",
+          "WebSocket",
+          "Vite",
+          "Styled Components",
+          "Eslint",
+          "SASS",
+          "Figma"
+        ]
+      }
+    ]
   }
 ]
