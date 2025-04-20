@@ -1,7 +1,7 @@
 [
   {
     "tab": "Notamedia",
-    "date":"Jan 2022 - Jan 2025",
+    "date": "Jan 2022 - Jan 2025",
     "projects": [
       {
         "id": 1,
@@ -24,7 +24,7 @@
   },
   {
     "tab": "Concept Studio",
-    "date":"Mar 2019 - Dec 2022",
+    "date": "Mar 2019 - Dec 2022",
     "projects": [
       {
         "id": 1,
@@ -115,8 +115,7 @@
           "Styled Components",
           "Figma"
         ]
-      }
-      ,
+      },
       {
         "id": 7,
         "description": "Having worked with Hexens to design a unique brand identity which took into account their specialty in cybersecurity, we took the next logical step and designed a website to go with it! ",
@@ -137,7 +136,7 @@
   {
     "tab": "Zoom Graphics",
     "url": "https://www.zoom.am/",
-    "date":"Jan 2017 - Feb 2019",
+    "date": "Jan 2017 - Feb 2019",
     "projects": [
       {
         "id": 1,
@@ -228,8 +227,7 @@
           "Figma",
           "Adobe XD"
         ]
-      }
-      ,
+      },
       {
         "id": 7,
         "description": "Based on scientific methods and aromatherapy principles Nairian Cosmetics develops highest quality natural and organic skincare and haircare products that revive and build upon millennia-old traditions of folk medicine and herbalism that are still very much alive in Armenia.",
@@ -249,7 +247,7 @@
   },
   {
     "tab": "Pet projects",
-    "date":"Jan 2025 - Now",
+    "date": "Jan 2025 - Now",
     "projects": [
       {
         "id": 1,
@@ -277,9 +275,47 @@
       },
       {
         "id": 2,
+        "description": "Yoldi Profile is a modern web application that features a full authentication system, allowing users to sign up, log in, and access a protected profile page. User data is fetched from an API and kept fresh using SWR (stale-while-revalidate) for seamless UX and performance.",
+        "name": "Yoldi Profile — User Profile Page with Authentication",
+        "url": "https://yoldi-profile.vercel.app/all-accounts",
+        "image": "/images/YoldiProfile.png",
+        "technologies": [
+          "React",
+          "Zustand",
+          "Next",
+          "SWR",
+          "Type Script",
+          "Vite",
+          "Styled Components",
+          "SASS",
+          "Figma",
+          "Eslint"
+        ]
+      },
+      {
+        "id": 3,
+        "description": "Movie Posters is a sleek and responsive web application for discovering popular movies using the TMDb API. It features infinite scrolling, debounced search, genre filtering, and a detailed movie page with trailers and descriptions. Users can add movies to favorites, and the app supports both light and dark themes for a personalized experience.",
+        "name": "Movie Posters — Discover and Explore Popular Movies",
+        "url": "https://movie-posters-omega.vercel.app/",
+        "image": "/images/MoviePosters.png",
+        "technologies": [
+          "React",
+          "Zustand",
+          "Type Script",
+          "Next",
+          "Vite",
+          "Styled Components",
+          "SWR",
+          "SASS",
+          "Figma",
+          "Eslint"
+        ]
+      },
+      {
+        "id": 5,
         "description": "A minimalistic and intuitive to-do list application that helps users manage their daily tasks efficiently. Built with modern frontend technologies, it focuses on clean UI, responsive design, and smooth user interactions.",
         "name": "To-Do List — Simple and Clean Task Management App",
-        "url": "https://yoldi-profile.vercel.app/all-accounts",
+        "url": "https://vercel.com/jackbabayans-projects/to-do-list",
         "image": "/images/ToDoList.png",
         "technologies": [
           "React",
@@ -289,25 +325,6 @@
           "Vite",
           "Styled Components",
           "Ant Design",
-          "SASS",
-          "Figma",
-          "Eslint"
-        ]
-      },
-      {
-        "id": 3,
-        "description": "Yoldi Profile is a modern web application that features a full authentication system, allowing users to sign up, log in, and access a protected profile page. User data is fetched from an API and kept fresh using SWR (stale-while-revalidate) for seamless UX and performance.",
-        "name": "Yoldi Profile — User Profile Page with Authentication",
-        "url": "https://yoldi-profile.vercel.app/all-accounts",
-        "image": "/images/YoldiProfile.png",
-        "technologies": [
-          "React",
-          "Zustand",
-          "Next",
-          "swr",
-          "Type Script",
-          "Vite",
-          "Styled Components",
           "SASS",
           "Figma",
           "Eslint"
