@@ -296,7 +296,7 @@
         "id": 3,
         "description": "Movie Posters is a sleek and responsive web application for discovering popular movies using the TMDb API. It features infinite scrolling, debounced search, genre filtering, and a detailed movie page with trailers and descriptions. Users can add movies to favorites, and the app supports both light and dark themes for a personalized experience.",
         "name": "Movie Posters — Discover and Explore Popular Movies",
-        "url": "https://movie-posters-omega.vercel.app/",
+        "url": "https://movie-posters-black.vercel.app/",
         "image": "/images/MoviePosters.png",
         "technologies": [
           "React",
