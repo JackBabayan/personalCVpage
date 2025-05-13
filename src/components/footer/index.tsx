@@ -61,7 +61,7 @@ export default function Footer() {
                     <Link aria-label="social" href="https://www.instagram.com/babayansaro/" target="_blank" className={styles.footerSocialLink}>
                         <InstagramIcon />
                     </Link>
-                    <Link aria-label="social" href="www.linkedin.com/in/saro-babayan-8b646519b" target="_blank" className={styles.footerSocialLink}>
+                    <Link aria-label="social" href="https://www.linkedin.com/in/saro-babayan/" target="_blank" className={styles.footerSocialLink}>
                         <LinkedinIcon />
                     </Link>
                 </Flex>
